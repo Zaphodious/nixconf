@@ -17,6 +17,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./modules
   ];
 
   options = {
@@ -35,6 +36,9 @@
 
     # Enable CUPS to print documents.
     services.printing.enable = true;
+
+    # Enable sanity
+    programs.nix-ld.enable = true;
 
 	 
     # The "zaph" user will usually always be with us
@@ -66,6 +70,7 @@
           profiles.dev.enable = true;
           profiles.dev.clojure.enable = true;
           profiles.dev.rust.enable = true;
+	  profiles.nixos.enable = true;
         };
       };
     };
