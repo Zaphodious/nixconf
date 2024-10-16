@@ -17,7 +17,7 @@
   imports = [
     # !!!!!! This is where you change it!
     # Specify the required configuration file
-    ./hosts/default/configuration.nix
+    ./hosts/grub-vm/configuration.nix
   ];
 
     networking.hostName = "nixos"; # Define your hostname.
