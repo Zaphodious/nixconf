@@ -40,6 +40,6 @@
     };
     # From vimjoyer video, don't touch, allows
     # modularity in homemanager
-    homeManagerModules.default = ./hmmodules;
+    homeManagerModules.default =  ./dotfiles;
   };
 }
