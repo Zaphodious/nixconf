@@ -2,3 +2,5 @@ hardware-configuration.nix
 box-conf.nix
 
 box.nix
+
+host.txt

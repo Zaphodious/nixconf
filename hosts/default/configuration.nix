@@ -16,6 +16,12 @@
     #./hardware-configuration.nix
     #inputs.home-manager.nixosModules.default
   ];
+  options = {
+  	profiles.default.enable = lib.options.mkEnableOption "Default profile";
+  };
+  #config = lib.mkIf config.profiles.default.enabled {
+  config = {
+
   modules.hyprland.enable = true;
   modules.common.enabled = true;
     # Bootloader.
@@ -59,11 +65,20 @@
     #services.xserver.displayManager.lightdm.enable = false;
     #services.xserver.desktopManager.xfce.enable = false;
 
-    # Configure keymap in X11
-    services.xserver.xkb = {
-      layout = "us";
-      variant = "";
+    services.xserver = {
+    	enable = true;
+	desktopManager = {
+		xterm.enable = false;
+		xfce.enable = true;
+	};
+    	# Configure keymap in X11
+	xkb = {
+		layout = "us";
+		variant = "";
+	};
     };
+
+    services.displayManager.defaultSession = "xfce";
 
     # Enable CUPS to print documents.
     services.printing.enable = true;
@@ -117,10 +132,10 @@
     programs.neovim.defaultEditor = true;
 
     # Get hyper!
-    programs.hyprland = {
-    	enable = true;
-	xwayland.enable = true;
-    };
+    # programs.hyprland = {
+    #	enable = true;
+    #	#xwayland.enable = true;
+    #    };
 
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.
@@ -140,4 +155,5 @@
     # networking.firewall.allowedUDPPorts = [ ... ];
     # Or disable the firewall altogether.
     # networking.firewall.enable = false;
+  };
 }
