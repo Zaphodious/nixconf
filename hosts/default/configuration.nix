@@ -56,8 +56,8 @@
     #services.xserver.enable = true;
 
     # Enable the XFCE Desktop Environment.
-    services.xserver.displayManager.lightdm.enable = false;
-    services.xserver.desktopManager.xfce.enable = false;
+    #services.xserver.displayManager.lightdm.enable = false;
+    #services.xserver.desktopManager.xfce.enable = false;
 
     # Configure keymap in X11
     services.xserver.xkb = {
@@ -109,6 +109,7 @@
       git
       gh
       nixfmt-rfc-style
+      kitty
     ];
 
     # Make nvim the default editor
