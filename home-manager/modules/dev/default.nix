@@ -13,10 +13,10 @@
   ];
 
   options = {
-    profiles.dev.enable = lib.mkEnableOption "enables dev profile";
+    modules.dev.enable = lib.mkEnableOption "enables dev profile";
   };
 
-  config = lib.mkIf config.profiles.dev.enable {
+  config = lib.mkIf config.modules.dev.enable {
     # The home.packages option allows you to install Nix packages into your
     # environment.
     home.packages = with pkgs; [

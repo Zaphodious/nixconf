@@ -8,10 +8,10 @@
 
 {
   options = {
-    profiles.dev.clojure.enable = lib.mkEnableOption "enables Clojure in dev profile";
+    modules.dev.clojure.enable = lib.mkEnableOption "enables Clojure in dev profile";
   };
 
-  config = lib.mkIf config.profiles.dev.clojure.enable {
+  config = lib.mkIf config.modules.dev.clojure.enable {
     # The home.packages option allows you to install Nix packages into your
     # environment.
     home.packages = with pkgs; [

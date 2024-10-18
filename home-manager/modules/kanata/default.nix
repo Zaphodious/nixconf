@@ -11,17 +11,11 @@
   ];
 
   options = {
-    profiles.kanata.enable = lib.mkEnableOption "enables Kanata profile";
+    modules.kanata.enable = lib.mkEnableOption "enables Kanata profile";
   };
 
   config = lib.mkIf config.profiles.kanata.enable {
 
-    services.kanata = {
-    	enable = true;
-	keyboards.default = {
-		config = builtins.readFile ./kanata.kbd;	
-	};
-    };
     # The home.packages option allows you to install Nix packages into your
     # environment.
     home.packages = with pkgs; [
@@ -38,6 +32,7 @@
       # # configuration. For example, this adds a command 'my-hello' to your
       # # environment:
       # (pkgs.writeShellScriptBin "nix-switch" ''sudo nixos-rebuild switch --flake /etc/nixos?submodules=1#default'')
+      kanata
     ];
 
     # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -53,6 +48,7 @@
       #   org.gradle.console=verbose
       #   org.gradle.daemon.idletimeout=3600000
       # '';
+      ".kanata.kbd" .source = ./kanata.kbd;
     };
 
     # Home Manager can also manage your environment variables through

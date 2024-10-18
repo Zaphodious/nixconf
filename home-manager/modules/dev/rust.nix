@@ -8,10 +8,10 @@
 
 {
   options = {
-    profiles.dev.rust.enable = lib.mkEnableOption "enables Rust in dev profile";
+    modules.dev.rust.enable = lib.mkEnableOption "enables Rust in dev profile";
   };
 
-  config = lib.mkIf config.profiles.dev.clojure.enable {
+  config = lib.mkIf config.modules.dev.rust.enable {
     # The home.packages option allows you to install Nix packages into your
     # environment.
     home.packages = with pkgs; [

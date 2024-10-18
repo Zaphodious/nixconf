@@ -71,10 +71,10 @@
           imports = [
             inputs.self.outputs.homeManagerModules.default
           ];
-          profiles.dev.enable = true;
-          profiles.dev.clojure.enable = true;
-          profiles.dev.rust.enable = true;
-	  profiles.nixos.enable = true;
+          modules.dev.enable = true;
+          modules.dev.clojure.enable = true;
+          modules.dev.rust.enable = true;
+	  modules.nixos.enable = true;
         };
       };
     };

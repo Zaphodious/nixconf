@@ -11,10 +11,10 @@
   ];
 
   options = {
-    profiles.nixos.enable = lib.mkEnableOption "enables NixOS profile";
+    modules.nixos.enable = lib.mkEnableOption "enables NixOS profile";
   };
 
-  config = lib.mkIf config.profiles.nixos.enable {
+  config = lib.mkIf config.modules.nixos.enable {
     # The home.packages option allows you to install Nix packages into your
     # environment.
     home.packages = with pkgs; [
