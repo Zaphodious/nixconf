@@ -11,8 +11,7 @@ in
 {
 
   imports = [
-    ./modules/dev
-    ./modules/nixos
+    ./modules
   ];
 
   options =
