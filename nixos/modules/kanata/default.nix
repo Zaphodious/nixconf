@@ -14,15 +14,15 @@
   imports = [
   ];
   options = {
-  	modules.hyprland.enable = lib.options.mkEnableOption "Hyprland Module";
+  	modules.kanata.enable = lib.options.mkEnableOption "Kanata Module";
   };
-  config = lib.mkIf modules.hyprland.enable {
+  config = libmkIf config.modules.kanata.enable {
 
-    # Get hyper!
-    programs.hyprland = {
-    	enable = true;
-	xwayland.enable = true;
-    };
+	services.kanata = {
+		enable = true;
+		keyboards.default = {
+			config = builtins.readFile ./kanata.kbd
+		};
 
     };
 }

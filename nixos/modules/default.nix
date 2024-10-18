@@ -13,5 +13,6 @@
 {
   imports = [
   ./hyprland.nix
+  ./kanata
   ];
 }
