@@ -14,15 +14,13 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../../commmon.nix
+    ../../common.nix
     #inputs.home-manager.nixosModules.default
   ];
-  options = {
-  };
-  #config = lib.mkIf config.profiles.default.enabled {
+  #config = {
   config = {
 
-  modules.hyprland.enable = true;
+  #modules.hyprland.enable = true;
   modules.common.enabled = true;
     # Bootloader.
     #boot.loader.grub.enable = true;

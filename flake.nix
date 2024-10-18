@@ -14,7 +14,6 @@
   outputs =
     { self, nixpkgs, ... }@inputs:
     let
-
     in
     {
       nixosConfigurations.default = nixpkgs.lib.nixosSystem {
@@ -26,13 +25,25 @@
           # out in box-conf.nix
           #./hardware-configuration.nix
           #(host + "/configuration.nix")
-	  ./common.nix
-	  ./box.nix
+	  ./hosts/default/configuration.nix
+          inputs.home-manager.nixosModules.default
+        ];
+      };
+      nixosConfigurations.inspatop = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs;
+        };
+        modules = [
+          # This lets us set the module for the machine to use 
+          # out in box-conf.nix
+          #./hardware-configuration.nix
+          #(host + "/configuration.nix")
+	  ./hosts/inspatop/configuration.nix
           inputs.home-manager.nixosModules.default
         ];
       };
       # From vimjoyer video, don't touch, allows
       # modularity in homemanager
       homeManagerModules.default = ./dotfiles;
-    };
+      };
 }

@@ -15,9 +15,11 @@
 
 {
   imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
     ./modules
+	"${builtins.fetchGit {
+		url = "https://github.com/antithesishq/madness.git";
+		rev = "c22c9c03579b7175d94f63e44ee0e518bb5ccdba";
+		}}/modules"
   ];
 
   options = {
@@ -38,7 +40,8 @@
     services.printing.enable = true;
 
     # Enable sanity
-    programs.nix-ld.enable = true;
+    #programs.nix-ld.enable = true;
+    madness.enable = true;
 
 	 
     # The "zaph" user will usually always be with us
@@ -49,6 +52,7 @@
       extraGroups = [
         "networkmanager"
         "wheel"
+	"uinput"
       ];
       packages = with pkgs; [
         #  thunderbird
