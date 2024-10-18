@@ -16,13 +16,14 @@
   options = {
   	modules.kanata.enable = lib.options.mkEnableOption "Kanata Module";
   };
-  config = libmkIf config.modules.kanata.enable {
+  config = lib.mkIf config.modules.kanata.enable {
 
 	services.kanata = {
 		enable = true;
 		keyboards.default = {
-			config = builtins.readFile ./kanata.kbd
+			config = builtins.readFile ./kanata.kbd;
 		};
 
+    };
     };
 }

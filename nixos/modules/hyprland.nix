@@ -16,7 +16,7 @@
   options = {
   	modules.hyprland.enable = lib.options.mkEnableOption "Hyprland Module";
   };
-  config = lib.mkIf modules.hyprland.enable {
+  config = lib.mkIf config.modules.hyprland.enable {
 
     # Get hyper!
     programs.hyprland = {

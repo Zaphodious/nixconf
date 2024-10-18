@@ -14,7 +14,7 @@
     modules.kanata.enable = lib.mkEnableOption "enables Kanata profile";
   };
 
-  config = lib.mkIf config.profiles.kanata.enable {
+  config = lib.mkIf config.modules.kanata.enable {
 
     # The home.packages option allows you to install Nix packages into your
     # environment.
