@@ -19,7 +19,7 @@
     services.kanata = {
     	enable = true;
 	keyboards.default = {
-		config = builtins.readFile kanata.kbd;	
+		config = builtins.readFile ./kanata.kbd;	
 	};
     };
     # The home.packages option allows you to install Nix packages into your
