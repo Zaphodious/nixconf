@@ -1,1 +1,1 @@
-sudo nixos-rebuild switch --flake ./?submodules=1#inspatop
+sudo nixos-rebuild switch --flake ./nixos/?submodules=1#inspatop
