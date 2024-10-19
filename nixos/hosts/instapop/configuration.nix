@@ -21,7 +21,7 @@
   #config = {
   config = {
 
-  networking.hostname = "instapop";
+  networking.hostName = "instapop";
 
   #modules.hyprland.enable = true;
   modules.common.enabled = true;
