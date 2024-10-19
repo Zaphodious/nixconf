@@ -14,5 +14,6 @@
   imports = [
   ./hyprland.nix
   ./kanata
+  ./fingerprint.nix
   ];
 }

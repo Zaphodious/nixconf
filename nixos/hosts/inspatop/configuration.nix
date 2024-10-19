@@ -16,12 +16,14 @@
     ./hardware-configuration.nix
     ../../common.nix
     #inputs.home-manager.nixosModules.default
+	
   ];
   #config = {
   config = {
 
   #modules.hyprland.enable = true;
   modules.common.enabled = true;
+  modules.fingerprint.enabled = true;
     # Bootloader.
     #boot.loader.grub.enable = true;
     #boot.loader.grub.device = "/dev/sda";
@@ -123,6 +125,7 @@
       gh
       nixfmt-rfc-style
       kitty
+      discord
     ];
 
     # Make nvim the default editor

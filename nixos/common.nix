@@ -32,6 +32,9 @@
       "flakes"
     ];
 
+    # custom modules
+    modules.kanata.enable = true;
+
     # Configure network proxy if necessary
     # networking.proxy.default = "http://user:password@proxy:port/";
     # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -43,6 +46,7 @@
     #programs.nix-ld.enable = true;
     madness.enable = true;
 
+    users.groups.uinput = {};
 	 
     # The "zaph" user will usually always be with us
     # auto-gen'd comment: Define a user account. Don't forget to set a password with ‘passwd’.

@@ -13,7 +13,6 @@ in
   imports = [
     ./dev
     ./nixos
-    ./kanata
   ];
 
 }
