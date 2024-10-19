@@ -29,7 +29,7 @@
           inputs.home-manager.nixosModules.default
         ];
       };
-      nixosConfigurations.inspatop = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.instapop = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
         };
@@ -38,7 +38,7 @@
           # out in box-conf.nix
           #./hardware-configuration.nix
           #(host + "/configuration.nix")
-	  ./hosts/inspatop/configuration.nix
+	  ./hosts/instapop/configuration.nix
           inputs.home-manager.nixosModules.default
         ];
       };
