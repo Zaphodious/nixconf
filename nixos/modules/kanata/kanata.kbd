@@ -1,7 +1,7 @@
 (defsrc caps)
 
 (defalias
-	escctrl (tap-hold 15 100 esc lctrl)
+	escctrl (tap-hold-press 10 100 esc lctrl)
 )
 
 (deflayer base

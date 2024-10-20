@@ -15,5 +15,6 @@
   ./hyprland.nix
   ./kanata
   ./fingerprint.nix
+  ./xfce.nix
   ];
 }

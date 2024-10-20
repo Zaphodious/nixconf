@@ -26,6 +26,7 @@
   #modules.hyprland.enable = true;
   modules.common.enabled = true;
   modules.fingerprint.enabled = true;
+  modules.xfce.enabled = true;
     # Bootloader.
     #boot.loader.grub.enable = true;
     #boot.loader.grub.device = "/dev/sda";
@@ -66,21 +67,6 @@
     # Enable the XFCE Desktop Environment.
     #services.xserver.displayManager.lightdm.enable = false;
     #services.xserver.desktopManager.xfce.enable = false;
-
-    services.xserver = {
-    	enable = true;
-	desktopManager = {
-		xterm.enable = false;
-		xfce.enable = true;
-	};
-    	# Configure keymap in X11
-	xkb = {
-		layout = "us";
-		variant = "";
-	};
-    };
-
-    services.displayManager.defaultSession = "xfce";
 
     # Enable CUPS to print documents.
     services.printing.enable = true;
@@ -128,6 +114,7 @@
       nixfmt-rfc-style
       kitty
       discord
+      vscode-fhs
     ];
 
     # Make nvim the default editor
