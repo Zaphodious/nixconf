@@ -11,18 +11,23 @@
 }:
 
 {
-  imports = [
-  ];
+  imports =
+    [
+    ];
   options = {
-  	modules.hyprland.enable = lib.options.mkEnableOption "Hyprland Module";
+    modules.hyprland.enable = lib.options.mkEnableOption "Hyprland Module";
   };
   config = lib.mkIf config.modules.hyprland.enable {
 
     # Get hyper!
     programs.hyprland = {
-    	enable = true;
-	xwayland.enable = true;
+      enable = true;
+      xwayland.enable = true;
     };
+    environment.systemPackages = [
+      # ... other packages
+      pkgs.kitty # required for the default Hyprland config
+    ];
 
-    };
+  };
 }
