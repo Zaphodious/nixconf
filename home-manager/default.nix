@@ -92,6 +92,7 @@ in
           name = "HotFish";
           email = "admin@hot.fish";
         };
+        pull.rebase = false;
         init.defaultBranch = "main";
       };
     };
