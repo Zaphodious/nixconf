@@ -24,6 +24,7 @@
       nixosConfigurations.default = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
+          pkgs-unstable = nixpkgs;
         };
         modules = [
           # This lets us set the module for the machine to use 
