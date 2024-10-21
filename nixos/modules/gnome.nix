@@ -15,7 +15,7 @@
     [
     ];
   options = {
-    modules.gnome.enabled = lib.options.mkEnableOption "Hyprland Module";
+    modules.gnome.enabled = lib.options.mkEnableOption "Gnome Module";
   };
   config = lib.mkIf config.modules.gnome.enabled {
 
