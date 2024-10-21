@@ -30,7 +30,9 @@
 
 	};
 
-    environment.systemPackages = with pkgs.gnomeExtensions; [
+    environment.systemPackages =
+
+		(with pkgs.gnomeExtensions; [
     	x11-gestures
 	window-on-top
 	wayland-or-x11
@@ -49,12 +51,11 @@
 	maccy-menu
 	logo-menu
 	desktop-cube
+    ]) ++ 
 
-
-
-
-    ];
-
+		(with pkgs; [
+			gnome-tweaks
+		]);
 
   };
 }

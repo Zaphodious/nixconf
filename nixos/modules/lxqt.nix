@@ -19,20 +19,19 @@
   };
   config = lib.mkIf config.modules.lxqt.enabled {
 
-    services.xserver = {
-      enable = true;
-      displayManager.lightdm.enable = true;
-      desktopManager = {
-        lxqt.enable = true;
-        xterm.enable = false;
+	services.xserver = {
+		enable = true;
+		displayManager.lightdm.enable = true;
+		desktopManager.lxqt.enable = true;
+      # Configure keymap in X11
+      xkb = {
+        layout = "us";
+        variant = "";
       };
-    };
+	};
 
-    # Configure keymap in X11
-    xkb = {
-      layout = "us";
-      variant = "";
-    };
+
+
 
   };
 }
