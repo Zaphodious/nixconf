@@ -19,12 +19,40 @@
   };
   config = lib.mkIf config.modules.gnome.enabled {
 
-	#services.xserver.enable = true;
-	services.displayManager.gdm.enable = true;
-	services.displayManager.gnome.enable = true;
+	services.xserver = {
+		enable = true;
+		displayManager.gdm.enable = true;
+		desktopManager.gnome.enable = true;
+	};
 
-    environment.systemPackages = with pkgs; [
-      # ... other packages
+	services.gnome = {
+		games.enable = true;
+
+	};
+
+    environment.systemPackages = with pkgs.gnomeExtensions; [
+    	x11-gestures
+	window-on-top
+	wayland-or-x11
+	useless-gaps
+	tilingnome
+	systemd-manager
+	rounded-window-corners
+	rounded-corners
+	rocketbar
+	quick-touchpad-toggle
+	pop-shell
+	onedrive
+	nasa-apod
+	media-controls
+	maximize-to-empty-workspace
+	maccy-menu
+	logo-menu
+	desktop-cube
+
+
+
+
     ];
 
 
