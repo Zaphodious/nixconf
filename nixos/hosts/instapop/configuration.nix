@@ -16,18 +16,37 @@
     ./hardware-configuration.nix
     ../../common.nix
     #inputs.home-manager.nixosModules.default
-	
+
   ];
   #config = {
   config = {
 
-  networking.hostName = "instapop";
+    networking.hostName = "instapop";
 
-  #modules.hyprland.enabled = true;
-  modules.common.enabled = true;
-  modules.fingerprint.enabled = true;
-  modules.gnome.enabled = true;
-  modules.blender.enabled = true;
+    #modules.hyprland.enabled = true;
+    modules.common.enabled = true;
+    modules.fingerprint.enabled = true;
+    modules.gnome.enabled = true;
+    modules.blender.enabled = true;
+
+    # Install programs
+    programs.steam.enable = true;
+    programs.firefox.enable = true;
+    programs.neovim.enable = true;
+    programs.neovim.defaultEditor = true;
+
+    environment.systemPackages = with pkgs; [
+      #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+      #  wget
+      wget
+      git
+      gh
+      nixfmt-rfc-style
+      kitty
+      discord
+      vscode-fhs
+    ];
+
     # Bootloader.
     #boot.loader.grub.enable = true;
     #boot.loader.grub.device = "/dev/sda";
@@ -97,30 +116,11 @@
     services.displayManager.autoLogin.enable = true;
     services.displayManager.autoLogin.user = "zaph";
 
-    # Install firefox.
-    programs.firefox.enable = true;
 
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
 
-    # List packages installed in system profile. To search, run:
-    # $ nix search wget
-    environment.systemPackages = with pkgs; [
-      #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-      #  wget
-      neovim
-      wget
-      git
-      gh
-      nixfmt-rfc-style
-      kitty
-      discord
-      vscode-fhs
-    ];
 
-    # Make nvim the default editor
-    programs.neovim.enable = true;
-    programs.neovim.defaultEditor = true;
 
     # Get hyper!
     # programs.hyprland = {
