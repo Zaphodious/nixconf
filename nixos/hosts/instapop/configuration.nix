@@ -23,7 +23,7 @@
 
     networking.hostName = "instapop";
 
-    #modules.hyprland.enabled = true;
+    # Toggle modules from local modules module
     modules.common.enabled = true;
     modules.fingerprint.enabled = true;
     modules.gnome.enabled = true;
