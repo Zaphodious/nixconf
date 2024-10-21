@@ -27,6 +27,7 @@
   modules.common.enabled = true;
   modules.fingerprint.enabled = true;
   modules.gnome.enabled = true;
+  modules.blender.enabled = true;
     # Bootloader.
     #boot.loader.grub.enable = true;
     #boot.loader.grub.device = "/dev/sda";

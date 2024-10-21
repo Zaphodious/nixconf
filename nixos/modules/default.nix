@@ -17,5 +17,6 @@
   ./fingerprint.nix
   ./xfce.nix
   ./gnome.nix
+  ./blender
   ];
 }
