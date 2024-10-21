@@ -15,22 +15,23 @@
     [
     ];
   options = {
-    modules.xfce.enabled = lib.options.mkEnableOption "Hyprland Module";
+    modules.lxqt.enabled = lib.options.mkEnableOption "lxqt Module";
   };
-  config = lib.mkIf config.modules.xfce.enabled {
+  config = lib.mkIf config.modules.lxqt.enabled {
 
     services.xserver = {
       enable = true;
       displayManager.lightdm.enable = true;
       desktopManager = {
+        lxqt.enable = true;
         xterm.enable = false;
-        xfce.enable = true;
       };
-      # Configure keymap in X11
-      xkb = {
-        layout = "us";
-        variant = "";
-      };
+    };
+
+    # Configure keymap in X11
+    xkb = {
+      layout = "us";
+      variant = "";
     };
 
   };

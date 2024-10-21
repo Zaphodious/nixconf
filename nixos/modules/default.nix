@@ -18,6 +18,7 @@
   ./xfce.nix
   ./gnome.nix
   ./kde.nix
+  ./lxqt.nix
   ./blender
   ];
 }
