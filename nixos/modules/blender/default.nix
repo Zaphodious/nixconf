@@ -5,10 +5,6 @@
 {
   config,
   pkgs,
-<<<<<<< HEAD
-=======
-  pkgs-unstable,
->>>>>>> a0c848d9c9d131bad61a23c218ab0cddbfd9b134
   inputs,
   lib,
   ...
