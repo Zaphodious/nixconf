@@ -16,5 +16,6 @@
   ./kanata
   ./fingerprint.nix
   ./xfce.nix
+  ./gnome.nix
   ];
 }

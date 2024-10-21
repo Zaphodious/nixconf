@@ -67,6 +67,8 @@
       extraSpecialArgs = {
         inherit inputs;
       };
+      # try to make home manager backup files
+      backupFileExtension = ".hm-bak";
       users = {
         #"zaph" = import ./home.nix;
         "zaph" = {

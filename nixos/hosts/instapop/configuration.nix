@@ -23,10 +23,10 @@
 
   networking.hostName = "instapop";
 
-  #modules.hyprland.enable = true;
+  #modules.hyprland.enabled = true;
   modules.common.enabled = true;
   modules.fingerprint.enabled = true;
-  modules.xfce.enabled = true;
+  modules.gnome.enabled = true;
     # Bootloader.
     #boot.loader.grub.enable = true;
     #boot.loader.grub.device = "/dev/sda";

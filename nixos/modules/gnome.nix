@@ -15,26 +15,16 @@
     [
     ];
   options = {
-    modules.hyprland.enabled = lib.options.mkEnableOption "Hyprland Module";
+    modules.gnome.enabled = lib.options.mkEnableOption "Hyprland Module";
   };
-  config = lib.mkIf config.modules.hyprland.enabled {
+  config = lib.mkIf config.modules.gnome.enabled {
 
 	#services.xserver.enable = true;
-	services.displayManager.sddm = {
-		enable = true;
-		wayland.enable = true;
-		theme = "where_is_my_sddm_theme";
-	};
-
-	programs.hyprland = {
-		enable = true;
-		xwayland.enable = true;
-	};
+	services.displayManager.gdm.enable = true;
+	services.displayManager.gnome.enable = true;
 
     environment.systemPackages = with pkgs; [
       # ... other packages
-      kitty
-      where-is-my-sddm-theme
     ];
 
 

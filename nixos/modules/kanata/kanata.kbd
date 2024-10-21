@@ -4,6 +4,8 @@
 	escctrl (tap-hold-press 10 100 esc lctrl)
 )
 
-(deflayer base
-	@escctrl
-)
+;;(deflayer base
+;;	@escctrl
+;;)
+
+(deflayer default esc)

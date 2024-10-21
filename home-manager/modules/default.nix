@@ -13,6 +13,7 @@ in
   imports = [
     ./dev
     ./nixos
+    ./hyprland.nix
   ];
 
 }

@@ -12,6 +12,7 @@ in
 
   imports = [
     ./modules
+    #./modules/hyprland.nix
   ];
 
   options =
@@ -94,6 +95,7 @@ in
         init.defaultBranch = "main";
       };
     };
+
 
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;
