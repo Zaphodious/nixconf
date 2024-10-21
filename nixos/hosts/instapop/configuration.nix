@@ -45,6 +45,7 @@
       kitty
       discord
       vscode-fhs
+      stacer
     ];
 
     # Bootloader.

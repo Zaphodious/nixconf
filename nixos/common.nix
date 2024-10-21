@@ -47,6 +47,10 @@
     madness.enable = true;
 
     users.groups.uinput = {};
+
+    environment.systemPackages = with pkgs; [
+      btop
+    ];
 	 
     # The "zaph" user will usually always be with us
     # auto-gen'd comment: Define a user account. Don't forget to set a password with ‘passwd’.

@@ -30,30 +30,31 @@
 
     };
 
+    hardware.sensor.iio.enable = true;
+
     environment.systemPackages =
 
       (with pkgs; [
         gnome-tweaks
+        wev
       ]) ++ 
       (with pkgs.gnomeExtensions; [
         x11-gestures
         window-on-top
         wayland-or-x11
-        useless-gaps
-        tilingnome
         systemd-manager
-        rounded-window-corners
-        rounded-corners
         rocketbar
-        quick-touchpad-toggle
-        pop-shell
-        onedrive
         nasa-apod
         media-controls
-        maximize-to-empty-workspace
-        maccy-menu
         logo-menu
         desktop-cube
+        just-perfection
+        fullscreen-to-empty-workspace
+        fullscreen-button
+        appindicator
+        open-bar
+        top-bar-organizer
+
       ]);
 
   };
