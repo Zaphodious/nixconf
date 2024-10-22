@@ -1,4 +1,4 @@
-#!/usr/bin/env -S nix shell --extra-experimental-features 'nix-command flakes' nixpkgs#nh nixpkgs#just nixpkgs#git --command bash
+#!/usr/bin/env -S nix shell --extra-experimental-features 'nix-command flakes' nixpkgs#nh nixpkgs#just nixpkgs#git nixpkgs#neovim --command bash
 
 NEWHOSTNAME=$1 
 
@@ -22,9 +22,6 @@ then
     exit 2
 fi
 
-# Note that we don't add the host to the file here.
-# we wait until the end, to allow the script to
-# run again if it fails
 
 # If there is no hostname passed in, ask for it
 while [ -z "${NEWHOSTNAME}" ]; do
@@ -32,16 +29,48 @@ while [ -z "${NEWHOSTNAME}" ]; do
 	read -p "Please set a hostname: " NEWHOSTNAME
 done
 
+# Makes the switch script. We'll do this either immediately
+# after determining that we've already set this up, or
+# later once the new host is properly configured
+
 NEW_HDIR="./nixos/hosts/$NEWHOSTNAME"
 NEW_CONF="$NEW_HDIR/configuration.nix"
 NEW_HARD="$NEW_HDIR/hardware-configuration.nix"
 
-# If the hostname is already in the hostlist.txt, we
-# cannot continue
+rebuild_nix() {
+    # Rebuilds the config, using the spcific flake. After this,
+    # any time the flake is run without a param it will
+    # get the hostname and do the right thing
+    EDITFIRST="n"
+    DO_REBUILD="n"
+    read -p "Edit the config file before building? y/n: " EDITFIRST
+    if [ $EDITFIRST -eq "y"]; then
+        nvim $NEW_CONF
+    fi
+    read -p "Rebuild Nix? y/n" DO_REBUILD
+    if [ $DO_REBUILD -eq "y"]; then
+        echo "Rebuilding nix for $NEWHOSTNAME"
+        sudo nixos-rebuild switch --flake ./nixos/?submodules=1#$NEWHOSTNAME
+    else
+        echo "Alright."
+        echo "To finish configuring your system, run the following command:"
+        echo 
+        echo "   sudo nixos-rebuild switch --flake ./nixos/?submodules=1#$NEWHOSTNAME"  
+        echo 
+        echo "(After that, running ./switch_nixos.sh will work properly)"
+    fi
+    
+}
+
+# If the hostname is already in the hostnames.nix file, we
+# know that we've already configured the script.  
 if grep NEWHOSTNAME ./nixos/hostnames.nix;
 then
-    echo "The host ${NEWHOSTNAME} is already configured"
-    exit 17
+    echo "The host ${NEWHOSTNAME} is already configured."
+    echo "Just in case, we're going to run through the rebuild procedure."
+    echo
+    rebuild_nix
+    exit 0
 fi
 
 # Start creating the new profile from the template
@@ -63,12 +92,8 @@ fi
 # at worst we keep it the same, and at best we update it)
 nixos-generate-config --show-hardware-config > "$NEW_HARD"
 
-# Make the switch_nixos.sh shell script
-sed "s/{{hostname}}/$NEWHOSTNAME/g" ./template/switch_nixos.template.sh > ./switch_nixos.sh
-chmod a+x ./switch_nixos.sh
-
 # Add the hostname to the hostnames.nix file, confirming that it has been created
-sed "/script-created-hosts/a \ \ \"${NEWHOSTNAME}\"" ./nixos/hostnames.nix
+sed -i "/script-created-hosts/a \ \ \"${NEWHOSTNAME}\"" ./nixos/hostnames.nix
 
 # Add the files to git, and commit
 git add .
@@ -76,8 +101,8 @@ git commit -m "Added new ${SYSTEMTYPE} host: ${NEWHOSTNAME}"
 
 # The new host is now in the system, and is ready to be configured.
 
-# Open the new configuration file for editing.
-edit $NEW_CONF
+# Rebuild the system
+rebuild_nix
 
 echo
 echo
