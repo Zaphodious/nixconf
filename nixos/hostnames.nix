@@ -3,5 +3,6 @@
   "instapop"
   "grub-vm"
   #script-created-hosts
+  "foobar"
   ":q"
 ]
