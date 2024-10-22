@@ -1,11 +1,17 @@
 #!/usr/bin/env -S nix shell --extra-experimental-features 'nix-command flakes' nixpkgs#nh nixpkgs#just nixpkgs#git nixpkgs#neovim --command bash
 
+# Arg 1: Name of the host
 NEWHOSTNAME=$1 
 
+# Arg 2: What kind of system
 SYSTEMTYPE=$2
 if [ -z $FOO ]; then
     SYSTEMTYPE="desktop"
 fi
+
+# Arg 3: What mode do we run in?
+#        Current options are ["unattended"]
+MODE=$3
 
 TEMPLATE_FILE="./template/configuration_$SYSTEMTYPE.template.nix"
 
@@ -38,19 +44,22 @@ NEW_CONF="$NEW_HDIR/configuration.nix"
 NEW_HARD="$NEW_HDIR/hardware-configuration.nix"
 
 rebuild_nix() {
-    # Rebuilds the config, using the spcific flake. After this,
-    # any time the flake is run without a param it will
-    # get the hostname and do the right thing
+    # If the user wants, we let them edit the config file. Then
+    # if the user wants, we rebuild nix
     EDITFIRST="n"
     DO_REBUILD="n"
     read -p "Edit the config file before building? y/n: " EDITFIRST
-    if [ "$EDITFIRST" = "y" ]; then
+    if [ "$EDITFIRST" = "y" ] && [ ! $MODE = "unattended" ]; then
+        # Edits the file :D
         nvim $NEW_CONF
     fi
-    read -p "Rebuild Nix? y/n" DO_REBUILD
-    if [ "$DO_REBUILD" = "y" ]; then
+    read -p "Rebuild Nix? y/n: " DO_REBUILD
+    if [ $MODE = "unattended"] || [ "$DO_REBUILD" = "y" ]; then
+        # Rebuilds the config, using the spcific flake. After this,
+        # any time the flake is run without a param it will
+        # get the system hostname and do the right thing
         echo "Rebuilding nix for $NEWHOSTNAME"
-        sudo nixos-rebuild switch --flake ./nixos/?submodules=1#$NEWHOSTNAME
+        #sudo nixos-rebuild switch --flake ./nixos/?submodules=1#$NEWHOSTNAME
     else
         echo "Alright."
         echo "To finish configuring your system, run the following command:"

@@ -4,6 +4,4 @@
   "grub-vm"
   #script-created-hosts
   "zaza"
-  "foobar"
-  "foobar"
 ]
