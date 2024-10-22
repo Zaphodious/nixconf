@@ -18,14 +18,12 @@
     #inputs.home-manager.nixosModules.default
 
   ];
-  #config = {
   config = {
 
     networking.hostName = "{{hostname}}";
 
     # Toggle modules from local modules module
     modules.common.enabled = true;
-    modules.gnome.enabled = true;
 
     # Install programs
     programs.neovim.enable = true;
@@ -33,7 +31,6 @@
 
     environment.systemPackages = with pkgs; [
       #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-      #  wget
       wget
       git
       gh
@@ -48,8 +45,6 @@
     #boot.loader.grub.useOSProber = true;
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
-
-    # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
     # Configure network proxy if necessary
     # networking.proxy.default = "http://user:password@proxy:port/";
@@ -76,18 +71,8 @@
       LC_TIME = "en_US.UTF-8";
     };
 
-    # Enable the X11 windowing system.
-    #services.xserver.enable = true;
-
-    # Enable the XFCE Desktop Environment.
-    #services.xserver.displayManager.lightdm.enable = false;
-    #services.xserver.desktopManager.xfce.enable = false;
-
     # Enable CUPS to print documents.
     services.printing.enable = true;
-
-    # Enable touchpad support (enabled default in most desktopManager).
-    # services.xserver.libinput.enable = true;
 
     # Enable automatic login for the user.
     #services.displayManager.autoLogin.enable = true;
@@ -96,14 +81,6 @@
 
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
-
-
-
-    # Get hyper!
-    # programs.hyprland = {
-    #	enable = true;
-    #	#xwayland.enable = true;
-    #    };
 
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.

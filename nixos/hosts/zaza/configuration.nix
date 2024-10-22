@@ -21,7 +21,7 @@
   #config = {
   config = {
 
-    networking.hostName = "feeble";
+    networking.hostName = "zaza";
 
     # Toggle modules from local modules module
     modules.common.enabled = true;

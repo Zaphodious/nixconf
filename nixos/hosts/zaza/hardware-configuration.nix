@@ -14,88 +14,14 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "tmpfs";
-      fsType = "tmpfs";
-    };
-
-  fileSystems."/nix" =
     { device = "/dev/disk/by-uuid/f9ac3751-f2ff-426b-b090-ee72470c3a80";
       fsType = "ext4";
-    };
-
-  fileSystems."/nix/store/sl141d1g77wvhr050ah87lcyz2czdxa3-glibc-2.40-36/etc" =
-    { device = "tmpfs";
-      fsType = "tmpfs";
-    };
-
-  fileSystems."/etc" =
-    { device = "tmpfs";
-      fsType = "tmpfs";
-    };
-
-  fileSystems."/usr" =
-    { device = "/nix/nix/store/wqv2j9h412kfpk8hsbb86vmyl8428g8w-code-fhs/usr";
-      fsType = "none";
-      options = [ "bind" ];
-    };
-
-  fileSystems."/.host-etc" =
-    { device = "/nix/etc";
-      fsType = "none";
-      options = [ "bind" ];
     };
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/E2A4-A2FB";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
-    };
-
-  fileSystems."/home" =
-    { device = "/nix/home";
-      fsType = "none";
-      options = [ "bind" ];
-    };
-
-  fileSystems."/lost+found" =
-    { device = "/nix/lost+found";
-      fsType = "none";
-      options = [ "bind" ];
-    };
-
-  fileSystems."/root" =
-    { device = "/nix/root";
-      fsType = "none";
-      options = [ "bind" ];
-    };
-
-  fileSystems."/srv" =
-    { device = "/nix/srv";
-      fsType = "none";
-      options = [ "bind" ];
-    };
-
-  fileSystems."/tmp" =
-    { device = "/nix/tmp";
-      fsType = "none";
-      options = [ "bind" ];
-    };
-
-  fileSystems."/var" =
-    { device = "/nix/var";
-      fsType = "none";
-      options = [ "bind" ];
-    };
-
-  fileSystems."/tmp/.X11-unix" =
-    { device = "tmpfs";
-      fsType = "tmpfs";
-    };
-
-  fileSystems."/etc/nixos" =
-    { device = "/nix/etc/nixos";
-      fsType = "none";
-      options = [ "bind" ];
     };
 
   swapDevices =

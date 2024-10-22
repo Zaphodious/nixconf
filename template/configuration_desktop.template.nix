@@ -18,7 +18,6 @@
     #inputs.home-manager.nixosModules.default
 
   ];
-  #config = {
   config = {
 
     networking.hostName = "{{hostname}}";
