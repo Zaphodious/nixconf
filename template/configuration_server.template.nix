@@ -21,17 +21,13 @@
   #config = {
   config = {
 
-    networking.hostName = "instapop";
+    networking.hostName = "{{hostname}}";
 
     # Toggle modules from local modules module
     modules.common.enabled = true;
-    modules.fingerprint.enabled = true;
     modules.gnome.enabled = true;
-    modules.blender.enabled = true;
 
     # Install programs
-    programs.steam.enable = true;
-    programs.firefox.enable = true;
     programs.neovim.enable = true;
     programs.neovim.defaultEditor = true;
 
@@ -43,8 +39,6 @@
       gh
       nixfmt-rfc-style
       kitty
-      discord
-      vscode-fhs
       stacer
     ];
 
@@ -92,26 +86,8 @@
     # Enable CUPS to print documents.
     services.printing.enable = true;
 
-    # Enable sound with pipewire.
-    hardware.pulseaudio.enable = false;
-    security.rtkit.enable = true;
-    services.pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-      # If you want to use JACK applications, uncomment this
-      #jack.enable = true;
-
-      # use the example session manager (no others are packaged yet so this is enabled by default,
-      # no need to redefine it in your config for now)
-      #media-session.enable = true;
-    };
-
     # Enable touchpad support (enabled default in most desktopManager).
     # services.xserver.libinput.enable = true;
-
-    # Define a user account. Don't forget to set a password with ‘passwd’.
 
     # Enable automatic login for the user.
     #services.displayManager.autoLogin.enable = true;
@@ -140,7 +116,7 @@
     # List services that you want to enable:
 
     # Enable the OpenSSH daemon.
-    # services.openssh.enable = true;
+    services.openssh.enable = true;
 
     # Open ports in the firewall.
     # networking.firewall.allowedTCPPorts = [ ... ];

@@ -5,8 +5,8 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins = {
-    	url = "github:hyprwm/hyprland-plugins";
-	#inputs.hyprland.follows = "hyprland";
+      url = "github:hyprwm/hyprland-plugins";
+      #inputs.hyprland.follows = "hyprland";
     };
 
     home-manager = {
@@ -19,8 +19,23 @@
   outputs =
     { self, nixpkgs, ... }@inputs:
     let
+      hostnames = import ./hostnames.nix;
     in
     {
+      nixosConfigurations = nixpkgs.lib.genAttrs hostnames (
+        user: nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs;
+        };
+        modules = [
+          ./hosts/${user}/configuration.nix
+          inputs.home-manager.nixosModules.default
+        ];
+
+        }
+      );
+      /*
+      # new_host_insert_marker
       nixosConfigurations.default = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
@@ -30,7 +45,7 @@
           # out in box-conf.nix
           #./hardware-configuration.nix
           #(host + "/configuration.nix")
-	  ./hosts/default/configuration.nix
+          ./hosts/default/configuration.nix
           inputs.home-manager.nixosModules.default
         ];
       };
@@ -43,12 +58,13 @@
           # out in box-conf.nix
           #./hardware-configuration.nix
           #(host + "/configuration.nix")
-	  ./hosts/instapop/configuration.nix
+          ./hosts/instapop/configuration.nix
           inputs.home-manager.nixosModules.default
         ];
       };
+      */
       # From vimjoyer video, don't touch, allows
       # modularity in homemanager
       homeManagerModules.default = ../home-manager;
-      };
+    };
 }

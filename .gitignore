@@ -3,3 +3,7 @@ box-conf.nix
 box.nix
 
 host.txt
+
+switch*.sh
+
+scratch.sh

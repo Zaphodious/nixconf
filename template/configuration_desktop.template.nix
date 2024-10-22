@@ -21,7 +21,7 @@
   #config = {
   config = {
 
-    networking.hostName = "instapop";
+    networking.hostName = "{{hostname}}";
 
     # Toggle modules from local modules module
     modules.common.enabled = true;
@@ -30,7 +30,6 @@
     modules.blender.enabled = true;
 
     # Install programs
-    programs.steam.enable = true;
     programs.firefox.enable = true;
     programs.neovim.enable = true;
     programs.neovim.defaultEditor = true;
