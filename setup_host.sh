@@ -44,11 +44,11 @@ rebuild_nix() {
     EDITFIRST="n"
     DO_REBUILD="n"
     read -p "Edit the config file before building? y/n: " EDITFIRST
-    if [ $EDITFIRST -eq "y" ]; then
+    if [ "$EDITFIRST" -eq "y" ]; then
         nvim $NEW_CONF
     fi
     read -p "Rebuild Nix? y/n" DO_REBUILD
-    if [ $DO_REBUILD -eq "y" ]; then
+    if [ "$DO_REBUILD" -eq "y" ]; then
         echo "Rebuilding nix for $NEWHOSTNAME"
         sudo nixos-rebuild switch --flake ./nixos/?submodules=1#$NEWHOSTNAME
     else
