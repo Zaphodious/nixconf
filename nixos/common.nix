@@ -50,6 +50,7 @@
 
     environment.systemPackages = with pkgs; [
       btop
+      pciutils
     ];
 	 
     # The "zaph" user will usually always be with us
