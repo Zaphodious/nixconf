@@ -4,4 +4,5 @@
   "grub-vm"
   #script-created-hosts
   "zaza"
+  "zaza"
 ]

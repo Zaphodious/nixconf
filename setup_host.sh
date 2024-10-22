@@ -5,9 +5,12 @@ NEWHOSTNAME=$1
 
 # Arg 2: What kind of system
 SYSTEMTYPE=$2
-if [ -z $FOO ]; then
+echo $SYSTEMTYPE
+if [ -z "${FOO}" ]; then
     SYSTEMTYPE="desktop"
 fi
+echo $SYSTEMTYPE
+read
 
 # Arg 3: What mode do we run in?
 #        Current options are ["unattended"]
