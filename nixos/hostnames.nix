@@ -3,8 +3,4 @@
   "instapop"
   "grub-vm"
   #script-created-hosts
-  "zaza"
-  "zaza"
-  "zaza"
-  "zaza"
 ]
