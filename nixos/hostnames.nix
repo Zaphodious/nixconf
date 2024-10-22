@@ -5,4 +5,5 @@
   #script-created-hosts
   "zaza"
   "zaza"
+  "zaza"
 ]

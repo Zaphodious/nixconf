@@ -6,11 +6,10 @@ NEWHOSTNAME=$1
 # Arg 2: What kind of system
 SYSTEMTYPE=$2
 echo $SYSTEMTYPE
-if [ -z "${FOO}" ]; then
+if [ -z "${SYSTEMTYPE}" ]; then
     SYSTEMTYPE="desktop"
 fi
 echo $SYSTEMTYPE
-read
 
 # Arg 3: What mode do we run in?
 #        Current options are ["unattended"]
@@ -50,14 +49,18 @@ rebuild_nix() {
     # If the user wants, we let them edit the config file. Then
     # if the user wants, we rebuild nix
     EDITFIRST="n"
-    DO_REBUILD="n"
-    read -p "Edit the config file before building? y/n: " EDITFIRST
-    if [ "$EDITFIRST" = "y" ] && [ ! $MODE = "unattended" ]; then
+    DO_REBUILD="y"
+    if [ ! $MODE = "unattented"]; then
+        read -p "Edit the config file before building? y/n: " EDITFIRST
+    fi
+    if [ "$EDITFIRST" = "y" ]; then
         # Edits the file :D
         nvim $NEW_CONF
     fi
-    read -p "Rebuild Nix? y/n: " DO_REBUILD
-    if [ $MODE = "unattended"] || [ "$DO_REBUILD" = "y" ]; then
+    if [ ! $MODE = "unattented"]; then
+        read -p "Rebuild Nix? y/n: " DO_REBUILD
+    fi
+    if [ "$DO_REBUILD" = "y" ]; then
         # Rebuilds the config, using the spcific flake. After this,
         # any time the flake is run without a param it will
         # get the system hostname and do the right thing
