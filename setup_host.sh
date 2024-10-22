@@ -50,14 +50,14 @@ rebuild_nix() {
     # if the user wants, we rebuild nix
     EDITFIRST="n"
     DO_REBUILD="y"
-    if [ ! $MODE = "unattented"]; then
+    if [ ! $MODE = "unattented" ]; then
         read -p "Edit the config file before building? y/n: " EDITFIRST
     fi
     if [ "$EDITFIRST" = "y" ]; then
         # Edits the file :D
         nvim $NEW_CONF
     fi
-    if [ ! $MODE = "unattented"]; then
+    if [ ! $MODE = "unattented" ]; then
         read -p "Rebuild Nix? y/n: " DO_REBUILD
     fi
     if [ "$DO_REBUILD" = "y" ]; then
@@ -79,7 +79,8 @@ rebuild_nix() {
 
 # If the hostname is already in the hostnames.nix file, we
 # know that we've already configured the script.  
-if grep NEWHOSTNAME ./nixos/hostnames.nix;
+grep NEWHOSTNAME ./nixos/hostnames.nix > /dev/null
+if [ $? -eq 0 ];
 then
     echo "The host ${NEWHOSTNAME} is already configured."
     echo "Just in case, we're going to run through the rebuild procedure."
