@@ -7,6 +7,7 @@
   pkgs,
   inputs,
   lib,
+  nixos-hardware,
   ...
 }:
 
@@ -16,7 +17,7 @@
     ./hardware-configuration.nix
     ../../common.nix
     #inputs.home-manager.nixosModules.default
-
+    inputs.nixos-hardware.nixosModules.dell-inspiron-7405
   ];
   #config = {
   config = {
@@ -46,6 +47,7 @@
       discord
       vscode-fhs
       stacer
+      godot_4
     ];
 
     # Bootloader.
@@ -54,6 +56,15 @@
     #boot.loader.grub.useOSProber = true;
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
+
+    # Let's get some game
+  
+    hardware.graphics.enable = true;
+    hardware.graphics.enable32Bit = true;
+
+    services.xserver.videoDrivers = [ "amdgpu" ];
+
+    boot.initrd.kernelModules = [ "amdgpu" ];
 
     # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 

@@ -3,5 +3,8 @@
   imports = [
   	./bufferline.nix
 	./colorscheme.nix
+	./fugitive.nix
 	];
+
+	globals.mapleader = " ";
 }
