@@ -48,7 +48,7 @@
       vscode-fhs
       stacer
       godot_4
-    ];
+    ] ++ [inputs.handlebars.packages."x86_64-linux".default];
 
     # Bootloader.
     #boot.loader.grub.enable = true;

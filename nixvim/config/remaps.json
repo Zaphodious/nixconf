@@ -1,0 +1,279 @@
+{ "categories": [
+
+    {
+        "category": "Splits",
+        "desc": "Movement relating to vim window splits",
+        "attrPath": ["keymaps"],
+        "transformer": "none",
+        "mappings": [
+            {
+                "mode": "n",
+                "key": "<leader>ww",
+                "action": "<C-w>v",
+                "options": {
+                    "desc": "Open a new vertical split"
+                }
+            },
+            {
+                "mode": "n",
+                "key": "<leader>we",
+                "action": "<C-w>n",
+                "options": {
+                    "desc": "Open a new horizontal split"
+                }
+            },
+            {
+                "mode": "n",
+                "key": "<leader>wq",
+                "action": "<C-w>q",
+                "options": {
+                    "desc": "Close a split"
+                }
+            },
+            {
+                "mode": "n",
+                "key": "<leader>wr",
+                "action": "<C-w>80|",
+                "options": {
+                    "desc": "Resize the current vertical split to 80"
+                }
+            },
+            {
+                "mode": "n",
+                "key": "<leader>w=",
+                "action": "<C-w>=",
+                "options": {
+                    "desc": "Equalize the width of splits"
+                }
+            },
+            {
+                "mode": "n",
+                "key": "<tab>l",
+                "action": "<C-w>l",
+                "options": {
+                    "desc": "Move between splits: Left"
+                }
+            },
+            {
+                "mode": "n",
+                "key": "<tab>k",
+                "action": "<C-w>k",
+                "options": {
+                    "desc": "Move between splits: Up"
+                }
+            },
+            {
+                "mode": "n",
+                "key": "<tab>j",
+                "action": "<C-w>j",
+                "options": {
+                    "desc": "Move between splits: Down"
+                }
+            },
+            {
+                "mode": "n",
+                "key": "<tab>h",
+                "action": "<C-w>h",
+                "options": {
+                    "desc": "Move between splits: Right"
+                }
+            }
+        ]
+    },
+    {
+        "category": "Git",
+        "desc": "Bindings for Fugitive",
+        "attrPath": ["keymaps"],
+        "transformer": "none",
+        "mappings": [
+            {
+                "mode": "n",
+                "key": "<leader>gs",
+                "action": ":Git<cr>",
+                "options": {
+                    "desc": "Open the Fugitive Git view"
+                }
+            },
+            {
+                "mode": "n",
+                "key": "<leader>gp",
+                "action": ":Git push<cr>",
+                "options": {
+                    "desc": "Push to the remote"
+                }
+            },
+            {
+                "mode": "n",
+                "key": "<leader>gc",
+                "action": ":Git add -A | :Git commit<cr>",
+                "options": {
+                    "desc": "Add everything and commit"
+                }
+            }
+        ]
+    },
+    {
+        "category": "Telescope",
+        "desc": "Bindings for Telescope",
+        "attrPath": ["keymaps"],
+        "transformer": "none",
+        "mappings": [
+            {
+                "mode": "n",
+                "key": "<leader>pf",
+                "action": ":Telescope find_files<cr>",
+                "options": {
+                    "desc": "Fuzzy Find"
+                }
+            },
+            {
+                "mode": "n",
+                "key": "<C-p>",
+                "action": ":Telescope git_files<cr>",
+                "options": {
+                    "desc": "Fuzzy Find within git"
+                }
+            },
+            {
+                "mode": "n",
+                "key": "<leader>ps",
+                "action": ":Telescope live_grep<cr>",
+                "options": {
+                    "desc": "Fuzzy Find with Grep"
+                }
+            }
+        ]
+    },
+    {
+        "category": "Misc",
+        "desc": "Misc functionality",
+        "attrPath": ["keymaps"],
+        "transformer": "none",
+        "mappings": [
+            {
+                "mode": "n",
+                "key": "<leader>rn",
+                "action": "<cmd>lua vim.lsp.buf.rename()<CR>",
+                "options": {
+                    "desc": "Rename-refactors symbol in project (make sure to :wa afterword)"
+                }
+            },
+            {
+                "mode": "n",
+                "key": "<leader>s",
+                "action": "[[:%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>]]",
+                "options": {
+                    "desc": "Replace text matches under cursor"
+                }
+            }
+        ]
+    },
+    {
+        "category": "LSP Actions",
+        "desc": "Mappings that get applied when the LSP connections, that call vim.lsp.buf.<action>",
+        "attrPath": ["plugins","lsp","keymaps","lspBuf"],
+        "transformer": "key-action-map",
+        "mappings": [
+            {
+                "mode": "n",
+                "key": "gd",
+                "action": "definition",
+                "options": {
+                    "desc": "Jump to definition"
+                }
+            },
+            {
+                "mode": "n",
+                "key": "gh",
+                "action": "hover",
+                "options": {
+                    "desc": "Displays hover info about the symbol under cursor"
+                }
+            },
+            {
+                "mode": "n",
+                "key": "<leader>vws",
+                "action": "workspace_symbol",
+                "options": {
+                    "desc": "Lists all symbols in the current workspace in the quickfix window"
+                }
+            },
+            {
+                "mode": "n",
+                "key": "<leader>vd",
+                "action": "open_float",
+                "options": {
+                    "desc": "Opens float"
+                }
+            },
+            {
+                "mode": "n",
+                "key": "[d",
+                "action": "goto_next",
+                "options": {
+                    "desc": "Go to the next instance of this symbol"
+                }
+            },
+            {
+                "mode": "n",
+                "key": "]d",
+                "action": "goto_prev",
+                "options": {
+                    "desc": "Go to the previous instance of this symbol"
+                }
+            },
+            {
+                "mode": "n",
+                "key": "<leader>vca",
+                "action": "code_action",
+                "options": {
+                    "desc": "Selects a code action available at the current cursor position"
+                }
+            },
+            {
+                "mode": "n",
+                "key": "<leader>vrr",
+                "action": "references",
+                "options": {
+                    "desc": "Lists all the references to the symbol under the cursor in the quickfix window"
+                }
+            },
+            {
+                "mode": "n",
+                "key": "<leader>vrn",
+                "action": "rename",
+                "options": {
+                    "desc": "Rename the symbol in the project."
+                }
+            },
+            {
+                "mode": "n",
+                "key": "<C-h>",
+                "action": "signature_help",
+                "options": {
+                    "desc": "Displays signature information about the symbol under the cursor in a floating window"
+                }
+            },
+            {
+                "mode": "n",
+                "key": "<leader>f",
+                "action": "format",
+                "options": {
+                    "desc": "Formats a buffer using the attached (and optionally filtered) language server clients."
+                }
+            }
+        ]
+    },
+    {
+        "category": "NeoTree",
+        "desc": "Mappings used when the cursor is inside a NeoTree window",
+        "attrPath": ["plugins","neo-tree","window","mappings"],
+        "transformer": "key-command-map",
+        "mappings": [ 
+            {
+                "key": "l",
+                "action": "toggle_node",
+                "options": {"desc": "Toggles the folder under the cursor in tree view"}
+            }
+        ]}
+]}

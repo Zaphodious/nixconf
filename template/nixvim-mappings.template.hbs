@@ -1,0 +1,18 @@
+# NixVim Custom Remaps
+
+Auto-generated ./nixvim/config/remaps.json
+
+{{#each categories}}
+## {{category}}
+
+{{desc}}
+
+| Keys | Description | Mode | Action |
+| --- | --- | --- | --- |
+{{#each mappings}}
+|  {{key}}  | {{options.desc}} | {{mode}} |  {{action}}  |
+{{/each}}
+
+
+{{/each}}
+

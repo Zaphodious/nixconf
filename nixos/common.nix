@@ -10,6 +10,7 @@
   pkgs,
   inputs,
   lib,
+  stdenv,
   ...
 }:
 
@@ -51,7 +52,7 @@
     environment.systemPackages = with pkgs; [
       btop
       pciutils
-    ];
+    ]; 
 	 
     # The "zaph" user will usually always be with us
     # auto-gen'd comment: Define a user account. Don't forget to set a password with ‘passwd’.
@@ -121,4 +122,5 @@
     # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
     system.stateVersion = "24.05"; # Did you read the comment?
     };
+
 }

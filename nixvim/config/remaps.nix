@@ -7,7 +7,7 @@
     [
   ## Movement
     # Open a new vertical window
-        ["n" "<leader>ww" "<C-w>v"]
+        ["n" "<leader>ww" "<C-w>v" {desc = "Open a new vertical window";}]
 
     # Open a new horizontal window
         ["n" "<leader>we" "<C-w>n"]

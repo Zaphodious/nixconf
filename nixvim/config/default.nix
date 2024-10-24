@@ -1,7 +1,9 @@
+{util, ...}:
 {
   # Import all your configuration modules here
   imports = [
-  	./remaps.nix
+  	#./remaps.nix
+		./mapping-adapter.nix
   	./bufferline.nix
 		./colorscheme.nix
 		./neotree.nix
@@ -21,4 +23,4 @@
 		telescope.enable = true; # Fuzzy Finder
 
 	};
-}
+} 

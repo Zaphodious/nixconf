@@ -2,6 +2,7 @@
   description = "Nixos config flake";
 
   inputs = {
+    handlebars.url = "github:jbboehr/handlebars.c";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins = {
