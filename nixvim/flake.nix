@@ -1,5 +1,5 @@
 {
-  description = "A nixvim configuration";
+  description = "Zaph's NixVim Configuration";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -27,8 +27,6 @@
             module = import ./config; # import the module directly
             # You can use `extraSpecialArgs` to pass additional arguments to your module files
             extraSpecialArgs = {
-              # inherit (inputs) foo;
-              util = (import ./util.nix inputs);
             };
           };
           nvim = nixvim'.makeNixvimWithModule nixvimModule;

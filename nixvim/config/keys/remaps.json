@@ -57,7 +57,16 @@
                 "keymaps"
             ],
             "transformer": "none",
-            "mappings": []
+            "mappings": [
+                {
+                    "mode": "t",
+                    "key": "<Esc><Esc>",
+                    "action": "<C-\\><C-n>",
+                    "options": {
+                        "desc": "Exit terminal mode (goes to normal mode in the buffer)"
+                    }
+                }
+            ]
         },
         {
             "category": "Splits",
@@ -162,7 +171,7 @@
                     "key": "<leader>gp",
                     "action": ":Git push<cr>",
                     "options": {
-                        "desc": "Push to the remote"
+                        "desc": "Git: Push to the remote"
                     }
                 },
                 {
@@ -170,7 +179,7 @@
                     "key": "<leader>gc",
                     "action": ":Git add -A | :Git commit<cr>",
                     "options": {
-                        "desc": "Add everything and commit"
+                        "desc": "Git: Add everything and commit"
                     }
                 }
             ]
@@ -193,7 +202,7 @@
                 },
                 {
                     "mode": "n",
-                    "key": "<C-p>",
+                    "key": "<leader>pg",
                     "action": ":Telescope git_files<cr>",
                     "options": {
                         "desc": "Fuzzy Find within git"
@@ -237,7 +246,7 @@
         },
         {
             "category": "LSP Actions",
-            "desc": "Mappings that get applied when the LSP connections, that call vim.lsp.buf.<action>",
+            "desc": "Mappings that get applied when the LSP connects",
             "attrPath": [
                 "plugins",
                 "lsp",
@@ -339,6 +348,7 @@
         {
             "category": "NeoTree",
             "desc": "Mappings used when the cursor is inside a NeoTree window",
+            "which-key-include": false,
             "attrPath": [
                 "plugins",
                 "neo-tree",
@@ -348,6 +358,7 @@
             "transformer": "key-command-map",
             "mappings": [
                 {
+                    "mode": "n",
                     "key": "l",
                     "action": "toggle_node",
                     "options": {
@@ -359,6 +370,7 @@
         {
             "category": "Snipe",
             "desc": "Mappings for inside the Snipe window",
+            "which-key-include": false,
             "attrPath": [
                 "plugins",
                 "snipe",
