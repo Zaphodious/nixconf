@@ -7,6 +7,12 @@ let
       ${key} = {inherit action;} // (if mapping ? "options" then mapping.options else {});
     }
   );
+  single-simple-action-key-map = (
+    { key, action, ... }@mapping:
+    {
+      ${action} = key;
+    }
+  );
   single-key-command-map = (
     { key, action, ... }@mapping:
     {
@@ -15,12 +21,16 @@ let
   );
   individual-transformer-set = {
     "none" = thing: thing;
+    "only-doc" = thing: {};
     "key-action-map" = single-key-action-map;
+    "simple-action-key-map" = single-simple-action-key-map;
     "key-command-map" = single-key-command-map;
   };
   list-transformer-set = {
     "none" = thing: thing;
+    "only-doc" = thing: [];
     "key-action-map" = lib.attrsets.mergeAttrsList;
+    "simple-action-key-map" = lib.attrsets.mergeAttrsList;
     "key-command-map" = lib.attrsets.mergeAttrsList;
   };
   parse-mapping-category = {attrPath, transformer, mappings, ...}:
