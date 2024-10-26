@@ -71,6 +71,18 @@
   home.sessionVariables = {
     EDITOR = "nvim";
   };
+    # Manage git
+    programs.git = {
+      enable = true;
+      extraConfig = {
+        user = {
+          name = "HotFish";
+          email = "admin@hot.fish";
+        };
+        pull.rebase = false;
+        init.defaultBranch = "main";
+      };
+    };
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;
     home.stateVersion = "24.05"; # Please read the comment before changing.
