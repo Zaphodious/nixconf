@@ -33,7 +33,8 @@ and added to git (it will not work otherwise).
 
 ## Running
 
+From a computer where nix is installed and flakes are enabled, run
 
-```
-nix run .
+```bash
+nix run "github:zaphodious/nixconf?dir=nixvim"
 ```

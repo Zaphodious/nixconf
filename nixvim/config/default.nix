@@ -16,6 +16,44 @@
 	viAlias = true;
 	vimAlias = true;
 
+	opts = {
+		nu = true;
+		relativenumber = true;
+
+		tabstop = 4;
+		softtabstop = 4;
+		shiftwidth = 4;
+
+		expandtab = true;
+
+		smartindent = true;
+
+		wrap = false;
+
+		swapfile = false;
+		backup = false;
+
+		undofile = true;
+
+		hlsearch = false;
+		incsearch = true;
+
+		termguicolors = true;
+
+		scrolloff = 8;
+		signcolumn = "yes";
+
+		updatetime = 50;
+
+		colorcolumn = "80";
+	};
+
+	extraConfigLua = ''
+		local home = os.getenv("HOME") or os.getenv("LOCALAPPDATA")
+		vim.opt.undodir = home .. "/.vim/undodir"
+		vim.opt.isfname:append("@-@")
+	'';
+
 	# Simple plugin enabling
 	plugins = {
 		treesitter.enable = true; # Highlighting
