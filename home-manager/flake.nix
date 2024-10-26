@@ -14,7 +14,6 @@
     {
       nixpkgs,
       home-manager,
-      lib,
       ...
     }:
     let
@@ -52,7 +51,7 @@
             # to pass through arguments to home.nix
           };
         };
-    make-the-homes = homedefs: lib.mkMerge ((builtins.map make-standard-home homedefs)
+    make-the-homes = homedefs: nixpkgs.lib.attrsets.mergeAttrsList ((builtins.map make-standard-home homedefs)
                   ++ [custom-homes]);
     in
     {

@@ -8,8 +8,6 @@
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "zaph";
-  home.homeDirectory = "/home/zaph";
 
   # enable some options
   profiles.dev.enable = true;
