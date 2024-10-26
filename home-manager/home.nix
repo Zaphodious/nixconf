@@ -6,13 +6,16 @@
 }:
 
 {
+  imports = [
+    ./modules
+  ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
 
   # enable some options
-  profiles.dev.enable = true;
-  profiles.dev.clojure.enable = true;
-  profiles.dev.rust.enable = true;
+  modules.dev.enable = true;
+  modules.dev.clojure.enable = true;
+  modules.dev.rust.enable = true;
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -68,4 +71,7 @@
   home.sessionVariables = {
     EDITOR = "nvim";
   };
+    # Let Home Manager install and manage itself.
+    programs.home-manager.enable = true;
+    home.stateVersion = "24.05"; # Please read the comment before changing.
 }

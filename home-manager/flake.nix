@@ -17,7 +17,8 @@
       ...
     }:
     let
-        custom-homes = {
+      custom-homes =
+        {
         };
       standard-homes = [
         {
@@ -38,21 +39,32 @@
           homefile,
         }:
         {
-          "${username}@${hostname}" = home-manager.lib.homeManagerConfiguration {
-            pkgs = nixpkgs.legacyPackages.${system};
-            home.username = username;
-            home.homeDirectory = homedir;
+          "${username}@${hostname}" =
+            home-manager.lib.homeManagerConfiguration (nixpkgs.lib.debug.traceVal
+              {
 
-            # Specify your home configuration modules here, for example,
-            # the path to your home.nix.
-            modules = [ homefile ];
+                # Specify your home configuration modules here, for example,
+                # the path to your home.nix.
+                modules = [
+                  homefile
+                  {
+                    home = {
+                      inherit username;
+                      homeDirectory = homedir;
 
-            # Optionally use extraSpecialArgs
-            # to pass through arguments to home.nix
-          };
+                    };
+
+                  }
+                ];
+                #hmm
+                pkgs = nixpkgs.legacyPackages.${system};
+
+                # Optionally use extraSpecialArgs
+                # to pass through arguments to home.nix
+              });
         };
-    make-the-homes = homedefs: nixpkgs.lib.attrsets.mergeAttrsList ((builtins.map make-standard-home homedefs)
-                  ++ [custom-homes]);
+      make-the-homes =
+        homedefs: nixpkgs.lib.attrsets.mergeAttrsList ((builtins.map make-standard-home homedefs) ++ [ custom-homes ]);
     in
     {
 
