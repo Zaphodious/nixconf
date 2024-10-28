@@ -7,6 +7,7 @@
 		./neotree.nix
 		./lsp.nix
 		./snipe.nix
+        ./oil.nix
 		./keys
 	];
 
@@ -57,11 +58,11 @@
 	# Simple plugin enabling
 	plugins = {
 		treesitter.enable = true; # Highlighting
-    fugitive.enable = true; # Git
+        fugitive.enable = true; # Git
 		telescope.enable = true; # Fuzzy Finder
 		undotree.enable = true; # Multiple undo path viewer
 		lualine.enable = true; # Smart info line at the bottom of a buffer
-    parinfer-rust.enable = true; # Parinfer for lisps
+        parinfer-rust.enable = true; # Parinfer for lisps
 
 	};
 } 

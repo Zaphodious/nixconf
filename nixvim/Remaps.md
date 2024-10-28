@@ -9,6 +9,8 @@ Commands that open windows/views that have their own internal key bindings
 | Keys | Description | Mode | Action |
 | --- | --- | --- | --- |
 |  &lt;leader&gt;t  | Opens the Neotree sidebar | n |  :Neotree &lt;CR&gt;  |
+|  &lt;leader&gt;T  | Opens the Neotree sidebar | n |  :Neotree Toggle &lt;CR&gt;  |
+|  &lt;leader&gt;o  | Opens the Oil file view | n |  :Oil --float &lt;CR&gt;  |
 |  gb  | Opens the snipe menu (goto snipe) | n |  :lua require(&quot;snipe&quot;).open_buffer_menu() &lt;CR&gt;  |
 |  &lt;leader&gt;u  | Opens Undo Tree | n |  :UndotreeToggle &lt;CR&gt;  |
 |  gnt  | Opens a new terminal in the current buffer | n |  :terminal  |

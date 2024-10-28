@@ -8,6 +8,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixvim-config.url = "path:../nixvim";
   };
 
   outputs =
@@ -15,20 +16,12 @@
       nixpkgs,
       home-manager,
       ...
-    }:
+    }@inputs:
     let
       custom-homes =
         {
         };
-      standard-homes = [
-        {
-          username = "zaph";
-          homedir = /home/zaph;
-          hostname = "instapop";
-          system = "x86_64-linux";
-          homefile = ./home.nix;
-        }
-      ];
+      standard-homes = (builtins.fromJSON (builtins.readFile ./homes.json)).homes ;
 
       make-standard-home =
         {
@@ -46,11 +39,11 @@
                 # Specify your home configuration modules here, for example,
                 # the path to your home.nix.
                 modules = [
-                  homefile
+                  (./homes + ("/" + homefile))
                   {
                     home = {
                       inherit username;
-                      homeDirectory = homedir;
+                      homeDirectory = builtins.toPath homedir;
 
                     };
 
@@ -61,6 +54,10 @@
 
                 # Optionally use extraSpecialArgs
                 # to pass through arguments to home.nix
+                extraSpecialArgs = {
+                    inherit inputs;
+                    inherit system;
+                };
               });
         };
       make-the-homes =

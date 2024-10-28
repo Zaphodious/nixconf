@@ -69,6 +69,7 @@
       ];
     };
 
+/*
     home-manager = {
       extraSpecialArgs = {
         inherit inputs;
@@ -90,6 +91,7 @@
         };
       };
     };
+    */
 
     # Allow unfree packages
     nixpkgs.config.allowUnfree = lib.mkDefault true;

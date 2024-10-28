@@ -7,7 +7,7 @@
 
 {
   imports = [
-    ./modules
+    ../modules
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -16,6 +16,7 @@
   modules.dev.enable = true;
   modules.dev.clojure.enable = true;
   modules.dev.rust.enable = true;
+  modules.custom-nixvim.enable = true;
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -69,7 +70,7 @@
   #  /etc/profiles/per-user/zaph/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    EDITOR = "nvim";
+    EDITOR = "vi";
   };
     # Manage git
     programs.git = {
@@ -87,3 +88,4 @@
     programs.home-manager.enable = true;
     home.stateVersion = "24.05"; # Please read the comment before changing.
 }
+

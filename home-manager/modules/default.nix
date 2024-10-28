@@ -14,6 +14,7 @@ in
     ./dev
     ./nixos
     ./hyprland.nix
+    ./nixvim.nix
   ];
 
 }

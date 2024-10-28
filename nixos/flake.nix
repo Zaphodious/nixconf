@@ -11,10 +11,12 @@
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
+/*
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    */
   };
 
   # Flake syntax means that only outputs can have arbitrary code.
@@ -31,7 +33,7 @@
         };
         modules = [
           ./hosts/${user}/configuration.nix
-          inputs.home-manager.nixosModules.default
+          #inputs.home-manager.nixosModules.default
         ];
 
         }
@@ -67,6 +69,6 @@
       */
       # From vimjoyer video, don't touch, allows
       # modularity in homemanager
-      homeManagerModules.default = ../home-manager;
+      #homeManagerModules.default = ../home-manager;
     };
 }

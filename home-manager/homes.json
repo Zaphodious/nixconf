@@ -1,0 +1,11 @@
+{
+    "homes": [
+        {
+            "username": "zaph",
+            "homedir": "/home/zaph",
+            "hostname": "instapop",
+            "system": "x86_64-linux",
+            "homefile": "zaph-laptop.nix"
+        }
+    ]
+}

@@ -71,8 +71,5 @@
     #
     #  /etc/profiles/per-user/zaph/etc/profile.d/hm-session-vars.sh
     #
-    home.sessionVariables = {
-      EDITOR = "nvim";
-    };
   };
 }

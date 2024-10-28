@@ -18,6 +18,22 @@
                 },
                 {
                     "mode": "n",
+                    "key": "<leader>T",
+                    "action": ":Neotree Toggle <CR>",
+                    "options": {
+                        "desc": "Opens the Neotree sidebar"
+                    }
+                },
+                {
+                    "mode": "n",
+                    "key": "<leader>o",
+                    "action": ":Oil --float <CR>",
+                    "options": {
+                        "desc": "Opens the Oil file view"
+                    }
+                },
+                {
+                    "mode": "n",
                     "key": "gb",
                     "action": ":lua require(\"snipe\").open_buffer_menu() <CR>",
                     "options": {
