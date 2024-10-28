@@ -2,7 +2,6 @@
   inputs,
   lib,
   config,
-  pkgs,
   system,
   ...
 }:
@@ -12,7 +11,7 @@
   };
   config = lib.mkIf config.modules.custom-nixvim.enable {
 
-    home.packages = with pkgs; [
+    home.packages = [
       inputs.nixvim-config.packages.${system}.default
     ];
   };
