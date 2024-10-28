@@ -15,6 +15,7 @@ in
     ./nixos
     ./hyprland.nix
     ./nixvim.nix
+    ./tab-rs.nix
   ];
 
 }

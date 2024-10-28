@@ -12,11 +12,12 @@
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
 
-  # enable some options
+  # Enable custom modules
   modules.dev.enable = true;
   modules.dev.clojure.enable = true;
   modules.dev.rust.enable = true;
   modules.custom-nixvim.enable = true;
+  modules.tab-rs.enable = true;
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -72,20 +73,19 @@
   home.sessionVariables = {
     EDITOR = "vi";
   };
-    # Manage git
-    programs.git = {
-      enable = true;
-      extraConfig = {
-        user = {
-          name = "HotFish";
-          email = "admin@hot.fish";
-        };
-        pull.rebase = false;
-        init.defaultBranch = "main";
+  # Manage git
+  programs.git = {
+    enable = true;
+    extraConfig = {
+      user = {
+        name = "HotFish";
+        email = "admin@hot.fish";
       };
+      pull.rebase = false;
+      init.defaultBranch = "main";
     };
-    # Let Home Manager install and manage itself.
-    programs.home-manager.enable = true;
-    home.stateVersion = "24.05"; # Please read the comment before changing.
+  };
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
+  home.stateVersion = "24.05"; # Please read the comment before changing.
 }
-

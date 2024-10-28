@@ -21,7 +21,7 @@
       custom-homes =
         {
         };
-      standard-homes = (builtins.fromJSON (builtins.readFile ./homes.json)).homes ;
+      standard-homes = (builtins.fromJSON (builtins.readFile ./homes.json)).homes;
 
       make-standard-home =
         {
@@ -32,36 +32,39 @@
           homefile,
         }:
         {
-          "${username}@${hostname}" =
-            home-manager.lib.homeManagerConfiguration (nixpkgs.lib.debug.traceVal
-              {
+          "${username}@${hostname}" = home-manager.lib.homeManagerConfiguration (
+            nixpkgs.lib.debug.traceVal {
 
-                # Specify your home configuration modules here, for example,
-                # the path to your home.nix.
-                modules = [
-                  (./homes + ("/" + homefile))
-                  {
-                    home = {
-                      inherit username;
-                      homeDirectory = builtins.toPath homedir;
+              # Specify your home configuration modules here, for example,
+              # the path to your home.nix.
+              modules = [
+                (./homes + ("/" + homefile))
+                {
+                  home = {
+                    inherit username;
+                    homeDirectory = builtins.toPath homedir;
 
-                    };
+                  };
 
-                  }
-                ];
-                #hmm
-                pkgs = nixpkgs.legacyPackages.${system};
+                }
+              ];
+              #hmm
+              pkgs = nixpkgs.legacyPackages.${system};
 
-                # Optionally use extraSpecialArgs
-                # to pass through arguments to home.nix
-                extraSpecialArgs = {
-                    inherit inputs;
-                    inherit system;
-                };
-              });
+              # Optionally use extraSpecialArgs
+              # to pass through arguments to home.nix
+              extraSpecialArgs = {
+                inherit inputs;
+                inherit system;
+              };
+            }
+          );
         };
       make-the-homes =
-        homedefs: nixpkgs.lib.attrsets.mergeAttrsList ((builtins.map make-standard-home homedefs) ++ [ custom-homes ]);
+        homedefs:
+        nixpkgs.lib.attrsets.mergeAttrsList (
+          (builtins.map make-standard-home homedefs) ++ [ custom-homes ]
+        );
     in
     {
 

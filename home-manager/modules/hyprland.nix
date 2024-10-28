@@ -1,4 +1,10 @@
-{ pkgs, lib, inputs, config, ... }:
+{
+  pkgs,
+  lib,
+  inputs,
+  config,
+  ...
+}:
 
 {
   options = {
@@ -6,14 +12,14 @@
   };
 
   config = lib.mkIf config.modules.hyprland-hm.enable {
-		wayland.windowManager.hyprland = {
-			enable = true;
-			plugins = with pkgs.hyprlandPlugins; [
-				hyprbars
-			];
-			settings = {
-				
-			};
-		};
-	};
+    wayland.windowManager.hyprland = {
+      enable = true;
+      plugins = with pkgs.hyprlandPlugins; [
+        hyprbars
+      ];
+      settings = {
+
+      };
+    };
+  };
 }
