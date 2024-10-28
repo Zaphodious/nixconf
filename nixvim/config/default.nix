@@ -63,6 +63,7 @@
 		undotree.enable = true; # Multiple undo path viewer
 		lualine.enable = true; # Smart info line at the bottom of a buffer
         parinfer-rust.enable = true; # Parinfer for lisps
+        nvim-surround.enable = true; # Lets you easily surround things
 
 	};
 } 

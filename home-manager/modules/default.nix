@@ -16,6 +16,7 @@ in
     ./hyprland.nix
     ./nixvim.nix
     ./tab-rs.nix
+    ./fonts.nix
   ];
 
 }
