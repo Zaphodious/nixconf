@@ -97,8 +97,8 @@
     nixpkgs.config.allowUnfree = lib.mkDefault true;
 
     # Make nvim the default editor
-    programs.neovim.enable = true;
-    programs.neovim.defaultEditor = true;
+    # programs.neovim.enable = true;
+    # programs.neovim.defaultEditor = true;
 
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.
