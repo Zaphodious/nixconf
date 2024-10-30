@@ -19,6 +19,7 @@ in
     ./fonts.nix
     ./fonts.nix
     ./alien.nix
+    ./bash.nix
   ];
 
 }
