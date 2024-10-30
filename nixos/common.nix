@@ -44,8 +44,9 @@
     services.printing.enable = true;
 
     # Enable sanity
-    #programs.nix-ld.enable = true;
+    # programs.nix-ld.enable = true;
     madness.enable = true;
+    #modules.alien.enable = true;
 
     users.groups.uinput = {};
 

@@ -14,5 +14,7 @@
     home.packages = [
       inputs.nixvim-config.packages.${system}.default
     ];
+
+
   };
 }

@@ -4,21 +4,20 @@
 
 {
   config,
-  pkgs,
   inputs,
   lib,
+  system,
   ...
 }:
-
 {
   imports = [
   ];
   options = {
-  	modules.alien.enabled = lib.options.mkEnableOption "Hyprland Module";
+  	modules.alien.enable = lib.options.mkEnableOption "nix-alien module";
   };
-  config = lib.mkIf config.modules.alien.enabled {
+  config = lib.mkIf config.modules.alien.enable {
 
-    environment.systemPackages = with inputs.nix-alien.packages.${config.nixpkgs.hostPlatform}; [
+    home.packages = with inputs.nix-alien.packages.${system}; [
         nix-alien
     ]; 
     

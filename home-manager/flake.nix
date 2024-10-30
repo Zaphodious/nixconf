@@ -9,6 +9,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim-config.url = "path:../nixvim";
+    nix-alien.url = "github:thiagokokada/nix-alien";
   };
 
   outputs =

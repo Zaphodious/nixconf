@@ -7,23 +7,76 @@
 }:
 
 {
-  imports = [
-    ./clojure.nix
-    ./rust.nix
-  ];
-
   options = {
-    modules.dev.enable = lib.mkEnableOption "enables dev profile";
+    modules.bash.enable = lib.mkEnableOption "enables Bash config module";
   };
 
-  config = lib.mkIf config.modules.dev.enable {
+  config = lib.mkIf config.modules.bash.enable {
+
+    programs.bash = {
+      enable = true;
+      enableCompletion = true;
+      shellAliases = {
+        nvim = "vim";
+        ".." = "cd ../";
+      };
+      bashrcExtra = ''
+        OS=""
+
+        case "$(uname -sr)" in
+
+           Darwin*)
+               OS="MacOS"
+             ;;
+
+           Linux*Microsoft*)
+               OS="WSL"
+             ;;
+
+           Linux*)
+             OS="Linux"
+             ;;
+
+           CYGWIN*|MINGW*|MINGW32*|MSYS*)
+               OS="Windows"
+             ;;
+
+           *)
+           OS="Other"
+             ;;
+        esac
+
+        WNUTS="\w"
+        THETIME="\t"
+        if [ $OS = "MacOS" ]
+        then
+            USTRING="\u@bistromath"
+        else
+            USTRING="\u@\h"
+        fi
+
+        function proomptme {
+            PS1="$(proompt -i $EUID -c '🮲 🮳' f09432\
+                -g "$(git status --porcelain=v2 --branch 2>&1)"\
+                -t trains 640635\
+                -s fbd439 4b3409 "$\{THETIME@P}"\
+                -s f43666 440616 " $\{USTRING@P}"\
+                -s c635bc 36052c "$\{WNUTS@P}"\
+                --git-s committed 26a630 063600\
+                --git-s staged 08a0c0 083040 \
+                --git-s unstaged dc532d 3c130d \
+                ) "
+        }
+
+        PROMPT_COMMAND=proomptme
+      '';
+    };
+
     # The home.packages option allows you to install Nix packages into your
     # environment.
     home.packages = with pkgs; [
       # # Adds the 'hello' command to your environment. It prints a friendly
       # # "Hello, world!" when run.
-      hello
-      cowsay
 
       # # It is sometimes useful to fine-tune packages, for example, by applying
       # # overrides. You can do that directly here, just don't forget the

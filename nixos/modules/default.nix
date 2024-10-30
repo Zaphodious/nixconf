@@ -20,6 +20,5 @@
   ./kde.nix
   ./lxqt.nix
   ./blender
-  ./alien.nix
   ];
 }

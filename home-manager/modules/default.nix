@@ -17,6 +17,8 @@ in
     ./nixvim.nix
     ./tab-rs.nix
     ./fonts.nix
+    ./fonts.nix
+    ./alien.nix
   ];
 
 }

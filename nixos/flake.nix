@@ -11,11 +11,11 @@
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
-/*
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    /*
+        home-manager = {
+          url = "github:nix-community/home-manager";
+          inputs.nixpkgs.follows = "nixpkgs";
+        };
     */
   };
 
@@ -27,45 +27,46 @@
     in
     {
       nixosConfigurations = nixpkgs.lib.genAttrs hostnames (
-        user: nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit inputs;
-        };
-        modules = [
-          ./hosts/${user}/configuration.nix
-          #inputs.home-manager.nixosModules.default
-        ];
+        user:
+        nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            ./hosts/${user}/configuration.nix
+            #inputs.home-manager.nixosModules.default
+          ];
 
         }
       );
       /*
-      # new_host_insert_marker
-      nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit inputs;
+        # new_host_insert_marker
+        nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            # This lets us set the module for the machine to use
+            # out in box-conf.nix
+            #./hardware-configuration.nix
+            #(host + "/configuration.nix")
+            ./hosts/default/configuration.nix
+            inputs.home-manager.nixosModules.default
+          ];
         };
-        modules = [
-          # This lets us set the module for the machine to use 
-          # out in box-conf.nix
-          #./hardware-configuration.nix
-          #(host + "/configuration.nix")
-          ./hosts/default/configuration.nix
-          inputs.home-manager.nixosModules.default
-        ];
-      };
-      nixosConfigurations.instapop = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit inputs;
+        nixosConfigurations.instapop = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            # This lets us set the module for the machine to use
+            # out in box-conf.nix
+            #./hardware-configuration.nix
+            #(host + "/configuration.nix")
+            ./hosts/instapop/configuration.nix
+            inputs.home-manager.nixosModules.default
+          ];
         };
-        modules = [
-          # This lets us set the module for the machine to use 
-          # out in box-conf.nix
-          #./hardware-configuration.nix
-          #(host + "/configuration.nix")
-          ./hosts/instapop/configuration.nix
-          inputs.home-manager.nixosModules.default
-        ];
-      };
       */
       # From vimjoyer video, don't touch, allows
       # modularity in homemanager
