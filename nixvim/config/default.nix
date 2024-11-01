@@ -9,6 +9,7 @@
 		./snipe.nix
         ./oil.nix
 		./keys
+        ./autocomplete.nix
 	];
 
 	globals.mapleader = " ";
