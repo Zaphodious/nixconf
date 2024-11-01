@@ -8,6 +8,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    proompt = {
+      url = "github:Zaphodious/proompt";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixvim-config.url = "path:../nixvim";
     nix-alien.url = "github:thiagokokada/nix-alien";
   };

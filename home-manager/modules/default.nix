@@ -20,6 +20,7 @@ in
     ./fonts.nix
     ./alien.nix
     ./bash.nix
+    ./alacritty
   ];
 
 }

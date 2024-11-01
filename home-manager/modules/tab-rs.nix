@@ -15,6 +15,12 @@
     home.packages = with pkgs; [
       tab-rs
     ];
+    programs.bash.bashrcExtra = ''
+    # tab multiplexer configuration: https://github.com/austinjones/tab-rs/
+    source "/home/zaph/.local/share/tab/completion/tab.bash"
+    # end tab configuration
+
+    '';
     home.file = {
       # # Building this configuration will create a copy of 'dotfiles/screenrc' in
       # # the Nix store. Activating the configuration will then make '~/.screenrc' a

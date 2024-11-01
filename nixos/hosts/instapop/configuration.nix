@@ -45,9 +45,10 @@
       nixfmt-rfc-style
       kitty
       discord
+      dissent
       vscode-fhs
       stacer
-      godot_4
+      # godot_4
     ] ++ [inputs.handlebars.packages."x86_64-linux".default];
 
     # Bootloader.

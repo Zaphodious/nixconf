@@ -4,6 +4,7 @@
     enable = true;
   # https://nix-community.github.io/nixvim/plugins/lsp/index.html
     servers = {
+        gdscript.enable = true;
       nixd.enable = true;
       html.enable = true;
       clojure_lsp.enable = true;
@@ -22,5 +23,7 @@
       jsonls.enable = true;
 
     };
+
+
   };
 }
