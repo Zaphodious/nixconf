@@ -30,7 +30,7 @@ let
   list-transformer-set = {
     "none" = thing: thing;
     "ignored" = thing: { };
-    "key-action-map" = thing: lib.debug.traceValSeq (lib.attrsets.mergeAttrsList thing);
+    "key-action-map" = thing: (lib.attrsets.mergeAttrsList thing);
     "key-command-map" = lib.attrsets.mergeAttrsList;
     "simple-action-key-map" = lib.attrsets.mergeAttrsList;
   };

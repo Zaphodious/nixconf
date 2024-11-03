@@ -415,7 +415,7 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-tz8YvHKK2tVjl1humpPNvVkb5VVHjn/Yljrx6hHU1cE=",
+        "narHash": "sha256-eDY0In4JAX6/mj2vov9R1E+4Y/6hPs4Jnm61a2KF67M=",
         "path": "../nixvim",
         "type": "path"
       },

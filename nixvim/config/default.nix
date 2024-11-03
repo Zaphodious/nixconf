@@ -10,6 +10,7 @@
         ./oil.nix
 		./keys
         ./autocomplete.nix
+        ./harpoon.nix
 	];
 
 	globals.mapleader = " ";

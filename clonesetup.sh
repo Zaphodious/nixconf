@@ -14,7 +14,6 @@ echo
 
 
 
-
 # Check to make sure that we're not in a git repo
 (git -C . rev-parse) 2> /dev/null
 if [ $? -ne 0 ];

@@ -76,7 +76,7 @@
             "mappings": [
                 {
                     "mode": "t",
-                    "key": "<Esc><Esc>",
+                    "key": "<Esc>",
                     "action": "<C-\\><C-n>",
                     "options": {
                         "desc": "Exit terminal mode (goes to normal mode in the buffer)"
@@ -162,6 +162,148 @@
                     "action": "<C-w>h",
                     "options": {
                         "desc": "Move between splits: Right"
+                    }
+                }
+            ]
+        },
+        {
+            "category": "Harpoon",
+            "desc": "Keymaps for Harpooning around nVim",
+            "attrPath": [
+                "plugins",
+                "harpoon",
+                "keymaps"
+            ],
+            "transformer": "simple-action-key-map",
+            "mappings": [
+                {
+                    "mode": "n",
+                    "key": "<leader>ha",
+                    "action": "addFile",
+                    "options": {
+                        "desc": "Adds a file to harpoon"
+                    }
+                },
+                {
+                    "mode": "n",
+                    "key": "<leader>hh",
+                    "action": "toggleQuickMenu",
+                    "options": {
+                        "desc": "Toggle the Harpoon quick menu"
+                    }
+                },
+                {
+                    "mode": "n",
+                    "key": "<leader>hh",
+                    "action": "cmdToggleQuickMenu",
+                    "options": {
+                        "desc": "Toggle the Harpoon quick menu"
+                    }
+                }
+            ]
+        },
+        {
+            "category": "Harpoon Marks",
+            "desc": "Keymaps for switching between Harpoon marks",
+            "attrPath": [
+                "plugins",
+                "harpoon",
+                "keymaps",
+                "navFile"
+            ],
+            "transformer": "simple-action-key-map",
+            "mappings": [
+                {
+                    "mode": "n",
+                    "key": "<leader>1",
+                    "action": "1",
+                    "options": {
+                        "desc": "Go to File 1"
+                    }
+                },
+                {
+                    "mode": "n",
+                    "key": "<leader>2",
+                    "action": "2",
+                    "options": {
+                        "desc": "Go to File 2"
+                    }
+                },
+                {
+                    "mode": "n",
+                    "key": "<leader>3",
+                    "action": "3",
+                    "options": {
+                        "desc": "Go to File 3"
+                    }
+                },
+                {
+                    "mode": "n",
+                    "key": "<leader>4",
+                    "action": "4",
+                    "options": {
+                        "desc": "Go to File 4"
+                    }
+                },
+                {
+                    "mode": "n",
+                    "key": "<leader>5",
+                    "action": "5",
+                    "options": {
+                        "desc": "Go to File 5"
+                    }
+                }
+            ]
+        },
+        {
+            "category": "Harpoon Terminals",
+            "desc": "Keymaps for switchin between Harpoon terminals",
+            "attrPath": [
+                "plugins",
+                "harpoon",
+                "keymaps",
+                "gotoTerminal"
+            ],
+            "transformer": "simple-action-key-map",
+            "mappings": [
+                {
+                    "mode": "n",
+                    "key": "<leader>s1",
+                    "action": "1",
+                    "options": {
+                        "desc": "Go to shell 1"
+                    }
+                },
+                {
+                    "mode": "n",
+                    "key": "<leader>s2",
+                    "action": "2",
+                    "options": {
+                        "desc": "Go to shell 2"
+                    }
+                },
+                {
+                    "mode": "n",
+                    "key": "<leader>s3",
+                    "action": "3",
+                    "options": {
+                        "desc": "Go to shell 3"
+                    }
+                },
+                {
+                    "mode": "n",
+                    "key": "<leader>s4",
+                    "action": "4",
+                    "options": {
+                        "desc": "Go to shell 4"
+                    }
+                },
+                {
+                    "mode": "n",
+                    "key": "<leader>s5",
+                    "action": "5",
+                    "options": {
+                        "desc": "Go to shell 5"
                     }
                 }
             ]
@@ -379,6 +521,83 @@
                     "action": "toggle_node",
                     "options": {
                         "desc": "Toggles the folder under the cursor in tree view"
+                    }
+                }
+            ]
+        },
+        {
+            "category": "Autocomplete",
+            "desc": "Navigate autocompletion",
+            "which-key-include": true,
+            "attrPath": [
+                "plugins",
+                "cmp",
+                "settings",
+                "mapping"
+            ],
+            "transformer": "key-action-map",
+            "mappings": [
+                {
+                    "key": "<Down>",
+                    "action": "cmp.mapping.select_next_item()",
+                    "options": {
+                        "desc": "Highlight the next autocomplete item"
+                    }
+                },
+                {
+                    "key": "<Tab>",
+                    "action": "cmp.mapping.select_next_item()",
+                    "options": {
+                        "desc": "Highlight the next autocomplete item"
+                    }
+                },
+                {
+                    "key": "<Up>",
+                    "action": "cmp.mapping.select_prev_item()",
+                    "options": {
+                        "desc": "Highlight the previous autocomplete item"
+                    }
+                },
+                {
+                    "key": "<S-Tab>",
+                    "action": "cmp.mapping.select_prev_item()",
+                    "options": {
+                        "desc": "Highlight the previous autocomplete item"
+                    }
+                },
+                {
+                    "key": "<CR>",
+                    "action": "cmp.mapping.confirm({ select = true })",
+                    "options": {
+                        "desc": "Select the highlighted autocomplete item"
+                    }
+                },
+                {
+                    "key": "<C-d>",
+                    "action": "cmp.mapping.scroll_docs(-4)",
+                    "options": {
+                        "desc": "Scroll down a page of autocomplete options"
+                    }
+                },
+                {
+                    "key": "<C-f>",
+                    "action": "cmp.mapping.scroll_docs(4)",
+                    "options": {
+                        "desc": "Scroll down a page of autocomplete options"
+                    }
+                },
+                {
+                    "key": "<C-Space>",
+                    "action": "cmp.mapping.complete()",
+                    "options": {
+                        "desc": "Complete the autocomplete"
+                    }
+                },
+                {
+                    "key": "<Esc>",
+                    "action": "cmp.mapping.close()",
+                    "options": {
+                        "desc": "Close the autocomplete menu"
                     }
                 }
             ]
