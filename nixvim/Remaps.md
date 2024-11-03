@@ -23,7 +23,7 @@ Commands regarding neovim terminals
 
 | Keys | Description | Mode | Action |
 | --- | --- | --- | --- |
-|  &lt;Esc&gt;&lt;Esc&gt;  | Exit terminal mode (goes to normal mode in the buffer) | t |  &lt;C-\&gt;&lt;C-n&gt;  |
+|  &lt;Esc&gt;  | Exit terminal mode (goes to normal mode in the buffer) | t |  &lt;C-\&gt;&lt;C-n&gt;  |
 
 
 ## Splits
@@ -41,6 +41,42 @@ Movement relating to vim window splits
 |  &lt;tab&gt;k  | Move between splits: Up | n |  &lt;C-w&gt;k  |
 |  &lt;tab&gt;j  | Move between splits: Down | n |  &lt;C-w&gt;j  |
 |  &lt;tab&gt;h  | Move between splits: Right | n |  &lt;C-w&gt;h  |
+
+
+## Harpoon
+
+Keymaps for Harpooning around nVim
+
+| Keys | Description | Mode | Action |
+| --- | --- | --- | --- |
+|  &lt;leader&gt;a  | Adds a file to harpoon | n |  addFile  |
+|  gh  | Go to the Harpoon quick menu | n |  toggleQuickMenu  |
+
+
+## Harpoon files
+
+Keymaps for switching between Harpoon marks
+
+| Keys | Description | Mode | Action |
+| --- | --- | --- | --- |
+|  &lt;leader&gt;1  | Go to File 1 | n |  1  |
+|  &lt;leader&gt;2  | Go to File 2 | n |  2  |
+|  &lt;leader&gt;3  | Go to File 3 | n |  3  |
+|  &lt;leader&gt;4  | Go to File 4 | n |  4  |
+|  &lt;leader&gt;5  | Go to File 5 | n |  5  |
+
+
+## Harpoon Terminals
+
+Keymaps for switchin between Harpoon terminals
+
+| Keys | Description | Mode | Action |
+| --- | --- | --- | --- |
+|  gt1  | Go to terminal 1 | n |  1  |
+|  gt2  | Go to terminal 2 | n |  2  |
+|  gt3  | Go to terminal 3 | n |  3  |
+|  gt4  | Go to terminal 4 | n |  4  |
+|  gt5  | Go to terminal 5 | n |  5  |
 
 
 ## Git
@@ -101,6 +137,23 @@ Mappings used when the cursor is inside a NeoTree window
 | Keys | Description | Mode | Action |
 | --- | --- | --- | --- |
 |  l  | Toggles the folder under the cursor in tree view | n |  toggle_node  |
+
+
+## Autocomplete
+
+Navigate autocompletion
+
+| Keys | Description | Mode | Action |
+| --- | --- | --- | --- |
+|  &lt;Down&gt;  | Highlight the next autocomplete item |  |  cmp.mapping.select_next_item()  |
+|  &lt;Tab&gt;  | Highlight the next autocomplete item |  |  cmp.mapping.select_next_item()  |
+|  &lt;Up&gt;  | Highlight the previous autocomplete item |  |  cmp.mapping.select_prev_item()  |
+|  &lt;S-Tab&gt;  | Highlight the previous autocomplete item |  |  cmp.mapping.select_prev_item()  |
+|  &lt;CR&gt;  | Select the highlighted autocomplete item |  |  cmp.mapping.confirm({ select = true })  |
+|  &lt;C-d&gt;  | Scroll down a page of autocomplete options |  |  cmp.mapping.scroll_docs(-4)  |
+|  &lt;C-f&gt;  | Scroll down a page of autocomplete options |  |  cmp.mapping.scroll_docs(4)  |
+|  &lt;C-Space&gt;  | Complete the autocomplete |  |  cmp.mapping.complete()  |
+|  &lt;Esc&gt;  | Close the autocomplete menu |  |  cmp.mapping.close()  |
 
 
 ## Snipe

@@ -1,7 +1,9 @@
 {
   plugins = {
     #bufferline.enable = true;
-    harpoon.enable = true;
-    enableTelescope = true;
+    harpoon = {
+      enable = true;
+      enableTelescope = true;
+    };
   };
 }

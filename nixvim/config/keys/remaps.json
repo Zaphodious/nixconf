@@ -178,7 +178,7 @@
             "mappings": [
                 {
                     "mode": "n",
-                    "key": "<leader>ha",
+                    "key": "<leader>a",
                     "action": "addFile",
                     "options": {
                         "desc": "Adds a file to harpoon"
@@ -186,24 +186,16 @@
                 },
                 {
                     "mode": "n",
-                    "key": "<leader>hh",
+                    "key": "gh",
                     "action": "toggleQuickMenu",
                     "options": {
-                        "desc": "Toggle the Harpoon quick menu"
-                    }
-                },
-                {
-                    "mode": "n",
-                    "key": "<leader>hh",
-                    "action": "cmdToggleQuickMenu",
-                    "options": {
-                        "desc": "Toggle the Harpoon quick menu"
+                        "desc": "Go to the Harpoon quick menu"
                     }
                 }
             ]
         },
         {
-            "category": "Harpoon Marks",
+            "category": "Harpoon files",
             "desc": "Keymaps for switching between Harpoon marks",
             "attrPath": [
                 "plugins",
@@ -268,42 +260,42 @@
             "mappings": [
                 {
                     "mode": "n",
-                    "key": "<leader>s1",
+                    "key": "gt1",
                     "action": "1",
                     "options": {
-                        "desc": "Go to shell 1"
+                        "desc": "Go to terminal 1"
                     }
                 },
                 {
                     "mode": "n",
-                    "key": "<leader>s2",
+                    "key": "gt2",
                     "action": "2",
                     "options": {
-                        "desc": "Go to shell 2"
+                        "desc": "Go to terminal 2"
                     }
                 },
                 {
                     "mode": "n",
-                    "key": "<leader>s3",
+                    "key": "gt3",
                     "action": "3",
                     "options": {
-                        "desc": "Go to shell 3"
+                        "desc": "Go to terminal 3"
                     }
                 },
                 {
                     "mode": "n",
-                    "key": "<leader>s4",
+                    "key": "gt4",
                     "action": "4",
                     "options": {
-                        "desc": "Go to shell 4"
+                        "desc": "Go to terminal 4"
                     }
                 },
                 {
                     "mode": "n",
-                    "key": "<leader>s5",
+                    "key": "gt5",
                     "action": "5",
                     "options": {
-                        "desc": "Go to shell 5"
+                        "desc": "Go to terminal 5"
                     }
                 }
             ]
