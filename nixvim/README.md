@@ -25,7 +25,9 @@ into registered mappings,
 into properly-declared which-key configs, and manually by
 [`config/keys/gen-nixvim-mapping-md.sh`](./config/keys/gen-nixvim-mapping-md.sh)
 into
-[`Remaps.md`](./Remaps.md) 
+[`Remaps.md`](./Remaps.md). (Why a json file? It's easily parsed and understood
+by everything, including handlbars (for remaps.md) and lua (if the config
+needs migrating back to regular old neovim for some reason).)
 
 If a new config file is added, it should be imported in
 [`config/default.nix`](config/default.nix)
@@ -38,6 +40,11 @@ From a computer where nix is installed and flakes are enabled, run
 ```bash
 nix run "github:zaphodious/nixconf?dir=nixvim"
 ```
+
+## As a module
+
+To use as a module within another flake, see Nixvim's [Standalone Usage](https://nix-community.github.io/nixvim/platforms/standalone.html)
+documentation.
 
 ## Nixconf Home manager
 
