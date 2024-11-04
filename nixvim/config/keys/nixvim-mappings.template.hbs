@@ -1,11 +1,19 @@
 # NixVim Custom Remaps
 
-Auto-generated ./nixvim/config/remaps.json
+Auto-generated from [remaps.json](/nixvim/config/keys/remaps.json)
+by [gen-nixvim-mapping-md.sh](/nixvim/config/keys/gen-nixvim-mapping-md)
+
+Note that the contents of the "action" field are only 
+what is passed to the respective nix config module, and 
+are not necessarily what is triggerd within neovim.
 
 {{#each categories}}
 ## {{category}}
 
 {{desc}}
+
+Config module: 
+{{#each attrPath as |item|}}{{item}}{{#unless @last}}.{{/unless}}{{/each}}
 
 | Keys | Description | Mode | Action |
 | --- | --- | --- | --- |

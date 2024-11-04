@@ -1,10 +1,18 @@
 # NixVim Custom Remaps
 
-Auto-generated ./nixvim/config/remaps.json
+Auto-generated from [remaps.json](/nixvim/config/keys/remaps.json)
+by [gen-nixvim-mapping-md.sh](/nixvim/config/keys/gen-nixvim-mapping-md)
+
+Note that the contents of the "action" field are only 
+what is passed to the respective nix config module, and 
+are not necessarily what is triggerd within neovim.
 
 ## Modals
 
 Commands that open windows/views that have their own internal key bindings
+
+Config module: 
+keymaps
 
 | Keys | Description | Mode | Action |
 | --- | --- | --- | --- |
@@ -21,6 +29,9 @@ Commands that open windows/views that have their own internal key bindings
 
 Commands useful in neovim terminals
 
+Config module: 
+keymaps
+
 | Keys | Description | Mode | Action |
 | --- | --- | --- | --- |
 |  &lt;Esc&gt;  | Exit terminal mode (goes to normal mode in the buffer) | t |  &lt;C-\&gt;&lt;C-n&gt;  |
@@ -29,6 +40,9 @@ Commands useful in neovim terminals
 ## Splits
 
 Movement relating to vim window splits
+
+Config module: 
+keymaps
 
 | Keys | Description | Mode | Action |
 | --- | --- | --- | --- |
@@ -47,6 +61,9 @@ Movement relating to vim window splits
 
 Keymaps for Harpooning around nVim
 
+Config module: 
+plugins.harpoon.keymaps
+
 | Keys | Description | Mode | Action |
 | --- | --- | --- | --- |
 |  &lt;leader&gt;a  | Adds a file to harpoon | n |  addFile  |
@@ -56,6 +73,9 @@ Keymaps for Harpooning around nVim
 ## Harpoon files
 
 Keymaps for switching between Harpoon marks
+
+Config module: 
+plugins.harpoon.keymaps.navFile
 
 | Keys | Description | Mode | Action |
 | --- | --- | --- | --- |
@@ -70,6 +90,9 @@ Keymaps for switching between Harpoon marks
 
 Keymaps for switchin between Harpoon terminals
 
+Config module: 
+plugins.harpoon.keymaps.gotoTerminal
+
 | Keys | Description | Mode | Action |
 | --- | --- | --- | --- |
 |  &lt;leader&gt;t1  | Go to terminal 1 | n |  1  |
@@ -83,6 +106,9 @@ Keymaps for switchin between Harpoon terminals
 
 Bindings for Fugitive
 
+Config module: 
+keymaps
+
 | Keys | Description | Mode | Action |
 | --- | --- | --- | --- |
 |  &lt;leader&gt;gs  | Open the Fugitive Git view | n |  :Git&lt;cr&gt;  |
@@ -93,6 +119,9 @@ Bindings for Fugitive
 ## Telescope
 
 Bindings for Telescope
+
+Config module: 
+keymaps
 
 | Keys | Description | Mode | Action |
 | --- | --- | --- | --- |
@@ -105,6 +134,9 @@ Bindings for Telescope
 
 Misc functionality
 
+Config module: 
+keymaps
+
 | Keys | Description | Mode | Action |
 | --- | --- | --- | --- |
 |  &lt;leader&gt;rn  | Rename-refactors symbol in project (make sure to :wa afterword) | n |  &lt;cmd&gt;lua vim.lsp.buf.rename()&lt;CR&gt;  |
@@ -114,6 +146,9 @@ Misc functionality
 ## LSP Actions
 
 Mappings that get applied when the LSP connects
+
+Config module: 
+plugins.lsp.keymaps.extra
 
 | Keys | Description | Mode | Action |
 | --- | --- | --- | --- |
@@ -134,6 +169,9 @@ Mappings that get applied when the LSP connects
 
 Mappings used when the cursor is inside a NeoTree window
 
+Config module: 
+plugins.neo-tree.window.mappings
+
 | Keys | Description | Mode | Action |
 | --- | --- | --- | --- |
 |  l  | Toggles the folder under the cursor in tree view | n |  toggle_node  |
@@ -142,6 +180,9 @@ Mappings used when the cursor is inside a NeoTree window
 ## Autocomplete
 
 Navigate autocompletion
+
+Config module: 
+plugins.cmp.settings.mapping
 
 | Keys | Description | Mode | Action |
 | --- | --- | --- | --- |
@@ -159,6 +200,9 @@ Navigate autocompletion
 ## Snipe
 
 Mappings for inside the Snipe window
+
+Config module: 
+plugins.snipe.navigation.keys
 
 | Keys | Description | Mode | Action |
 | --- | --- | --- | --- |
