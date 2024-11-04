@@ -5,7 +5,7 @@ Home manager subsystem.
 ## Running
 
 To update the configuration after editing, set the working
-directory to this directory's parent and run [[../switch_hm.sh]].
+directory to this directory's parent and run [../switch_hm.sh](../switch_hm.sh).
 
 ## Structure
 
