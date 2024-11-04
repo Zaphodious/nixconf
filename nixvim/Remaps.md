@@ -153,7 +153,7 @@ Navigate autocompletion
 |  &lt;C-d&gt;  | Scroll down a page of autocomplete options |  |  cmp.mapping.scroll_docs(-4)  |
 |  &lt;C-f&gt;  | Scroll down a page of autocomplete options |  |  cmp.mapping.scroll_docs(4)  |
 |  &lt;C-Space&gt;  | Complete the autocomplete |  |  cmp.mapping.complete()  |
-|  &lt;Esc&gt;  | Close the autocomplete menu |  |  cmp.mapping.close()  |
+|  &lt;S-Esc&gt;  | Close the autocomplete menu |  |  cmp.mapping.close()  |
 
 
 ## Snipe

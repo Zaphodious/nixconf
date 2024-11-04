@@ -38,3 +38,10 @@ From a computer where nix is installed and flakes are enabled, run
 ```bash
 nix run "github:zaphodious/nixconf?dir=nixvim"
 ```
+
+## Nixconf Home manager
+
+If using the home manager configuration from this repo, running 
+(switch_hm.sh)[../switch_hm.sh] will automatically 
+use the up to date version of this configuration (and will generate 
+an updated [`Remaps.md`](./Remaps.md)
