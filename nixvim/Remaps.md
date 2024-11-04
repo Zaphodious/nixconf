@@ -8,8 +8,8 @@ Commands that open windows/views that have their own internal key bindings
 
 | Keys | Description | Mode | Action |
 | --- | --- | --- | --- |
-|  &lt;leader&gt;t  | Opens the Neotree sidebar | n |  :Neotree &lt;CR&gt;  |
-|  &lt;leader&gt;T  | Opens the Neotree sidebar | n |  :Neotree Toggle &lt;CR&gt;  |
+|  &lt;leader&gt;n  | Opens the Neotree sidebar | n |  :Neotree &lt;CR&gt;  |
+|  &lt;leader&gt;N  | Opens the Neotree sidebar | n |  :Neotree toggle &lt;CR&gt;  |
 |  &lt;leader&gt;o  | Opens the Oil file view | n |  :Oil --float &lt;CR&gt;  |
 |  gb  | Opens the snipe menu (goto snipe) | n |  :lua require(&quot;snipe&quot;).open_buffer_menu() &lt;CR&gt;  |
 |  &lt;leader&gt;u  | Opens Undo Tree | n |  :UndotreeToggle &lt;CR&gt;  |
@@ -19,7 +19,7 @@ Commands that open windows/views that have their own internal key bindings
 
 ## Terminal
 
-Commands regarding neovim terminals
+Commands useful in neovim terminals
 
 | Keys | Description | Mode | Action |
 | --- | --- | --- | --- |
@@ -50,7 +50,7 @@ Keymaps for Harpooning around nVim
 | Keys | Description | Mode | Action |
 | --- | --- | --- | --- |
 |  &lt;leader&gt;a  | Adds a file to harpoon | n |  addFile  |
-|  gh  | Go to the Harpoon quick menu | n |  toggleQuickMenu  |
+|  &lt;leader&gt;h  | Go to the Harpoon quick menu | n |  toggleQuickMenu  |
 
 
 ## Harpoon files
@@ -72,11 +72,11 @@ Keymaps for switchin between Harpoon terminals
 
 | Keys | Description | Mode | Action |
 | --- | --- | --- | --- |
-|  gt1  | Go to terminal 1 | n |  1  |
-|  gt2  | Go to terminal 2 | n |  2  |
-|  gt3  | Go to terminal 3 | n |  3  |
-|  gt4  | Go to terminal 4 | n |  4  |
-|  gt5  | Go to terminal 5 | n |  5  |
+|  &lt;leader&gt;t1  | Go to terminal 1 | n |  1  |
+|  &lt;leader&gt;t2  | Go to terminal 2 | n |  2  |
+|  &lt;leader&gt;t3  | Go to terminal 3 | n |  3  |
+|  &lt;leader&gt;t4  | Go to terminal 4 | n |  4  |
+|  &lt;leader&gt;t5  | Go to terminal 5 | n |  5  |
 
 
 ## Git

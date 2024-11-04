@@ -10,7 +10,7 @@
             "mappings": [
                 {
                     "mode": "n",
-                    "key": "<leader>t",
+                    "key": "<leader>n",
                     "action": ":Neotree <CR>",
                     "options": {
                         "desc": "Opens the Neotree sidebar"
@@ -18,8 +18,8 @@
                 },
                 {
                     "mode": "n",
-                    "key": "<leader>T",
-                    "action": ":Neotree Toggle <CR>",
+                    "key": "<leader>N",
+                    "action": ":Neotree toggle <CR>",
                     "options": {
                         "desc": "Opens the Neotree sidebar"
                     }
@@ -68,7 +68,7 @@
         },
         {
             "category": "Terminal",
-            "desc": "Commands regarding neovim terminals",
+            "desc": "Commands useful in neovim terminals",
             "attrPath": [
                 "keymaps"
             ],
@@ -186,7 +186,7 @@
                 },
                 {
                     "mode": "n",
-                    "key": "gh",
+                    "key": "<leader>h",
                     "action": "toggleQuickMenu",
                     "options": {
                         "desc": "Go to the Harpoon quick menu"
@@ -260,7 +260,7 @@
             "mappings": [
                 {
                     "mode": "n",
-                    "key": "gt1",
+                    "key": "<leader>t1",
                     "action": "1",
                     "options": {
                         "desc": "Go to terminal 1"
@@ -268,7 +268,7 @@
                 },
                 {
                     "mode": "n",
-                    "key": "gt2",
+                    "key": "<leader>t2",
                     "action": "2",
                     "options": {
                         "desc": "Go to terminal 2"
@@ -276,7 +276,7 @@
                 },
                 {
                     "mode": "n",
-                    "key": "gt3",
+                    "key": "<leader>t3",
                     "action": "3",
                     "options": {
                         "desc": "Go to terminal 3"
@@ -284,7 +284,7 @@
                 },
                 {
                     "mode": "n",
-                    "key": "gt4",
+                    "key": "<leader>t4",
                     "action": "4",
                     "options": {
                         "desc": "Go to terminal 4"
@@ -292,7 +292,7 @@
                 },
                 {
                     "mode": "n",
-                    "key": "gt5",
+                    "key": "<leader>t5",
                     "action": "5",
                     "options": {
                         "desc": "Go to terminal 5"
