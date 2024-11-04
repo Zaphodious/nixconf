@@ -12,6 +12,10 @@
       url = "github:Zaphodious/proompt";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    godot-bin = {
+      url = "github:Damianu/godot4-bin";
+      inputs.nixpkgs.follows = "nixpkgs"; # Might prevent some OpenGL issues
+    };
     nixvim-config.url = "path:../nixvim";
     nix-alien.url = "github:thiagokokada/nix-alien";
   };

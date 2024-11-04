@@ -586,7 +586,7 @@
                     }
                 },
                 {
-                    "key": "<Esc>",
+                    "key": "<S-Esc>",
                     "action": "cmp.mapping.close()",
                     "options": {
                         "desc": "Close the autocomplete menu"

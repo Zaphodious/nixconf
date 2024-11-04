@@ -3,29 +3,27 @@
   pkgs,
   inputs,
   lib,
+  system,
+  self,
   ...
 }:
 
 {
-  imports = [
-    ./clojure.nix
-    ./rust.nix
-    ./godot.nix
-    ./dotnet.nix
-  ];
-
   options = {
-    modules.dev.enable = lib.mkEnableOption "enables dev profile";
+    modules.dev.godot.enable = lib.mkEnableOption "enables Clojure in dev profile";
   };
 
-  config = lib.mkIf config.modules.dev.enable {
+  config = lib.mkIf config.modules.dev.godot.enable {
+    modules.dev.dotnet.enable = true;
+
+    #foo = lib.meta.mkGodotMutableSymlink ./godotconfig "${config.my.home}/.config/godot";
+
     # The home.packages option allows you to install Nix packages into your
     # environment.
-    home.packages = with pkgs; [
+    home.packages = [
       # # Adds the 'hello' command to your environment. It prints a friendly
       # # "Hello, world!" when run.
-      hello
-      cowsay
+      inputs.godot-bin.packages.${system}.godot-mono
 
       # # It is sometimes useful to fine-tune packages, for example, by applying
       # # overrides. You can do that directly here, just don't forget the
@@ -54,6 +52,7 @@
       #   org.gradle.console=verbose
       #   org.gradle.daemon.idletimeout=3600000
       # '';
+      ".config/godot/".source = config.lib.meta.linkMutableConfig "godot";
     };
 
     # Home Manager can also manage your environment variables through

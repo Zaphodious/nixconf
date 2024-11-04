@@ -23,4 +23,11 @@ in
     ./alacritty
   ];
 
+
+    lib.meta = {
+      configPath = lib.debug.traceValSeq "${config.home.homeDirectory}/nixconf/home-manager/mutable-configs";
+      linkMutableConfig = path: config.lib.file.mkOutOfStoreSymlink
+        (config.lib.meta.configPath + lib.strings.removePrefix (toString inputs.self) ("/" + (toString path)));
+    };
+
 }
