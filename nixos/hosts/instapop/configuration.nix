@@ -29,12 +29,13 @@
     modules.fingerprint.enabled = true;
     modules.gnome.enabled = true;
     modules.blender.enabled = true;
+    modules.office.enabled = true;
 
     # Install programs
     programs.steam.enable = true;
     programs.firefox.enable = true;
     programs.neovim.enable = true;
-    programs.neovim.defaultEditor = true;
+    # programs.neovim.defaultEditor = true;
 
     environment.systemPackages = with pkgs; [
       #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.

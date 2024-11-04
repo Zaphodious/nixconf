@@ -77,6 +77,7 @@
   #
   home.sessionVariables = {
     EDITOR = "vi";
+    TERMINAL = "alacritty";
   };
   # Manage git
   programs.git = {

@@ -39,3 +39,7 @@ host's hardware-configuration.nix file.
 To update dependencies, either specifically or system-wide, please see 
 the documentation for how to update depencies using nix flakes.
 
+## OneDrive
+
+For logging into OneDrive on a new system, please refer to [this wiki article]
+(https://nixos.wiki/wiki/OneDrive).
