@@ -85,8 +85,8 @@
             ]
         },
         {
-            "category": "Line Nav",
-            "desc": "Allows normal movement keys to navigate soft wrapped lines",
+            "category": "Prose Editing",
+            "desc": "Keymaps for making nvim better at editing prose",
             "attrPath": [
                 "keymaps"
             ],
@@ -97,7 +97,7 @@
                     "key": "j",
                     "action": "gj",
                     "options": {
-                        "desc": "Open a new vertical split"
+                        "desc": "Makes it so that moving up and down works normally for soft wraps"
                     }
                 },
                 {
@@ -105,7 +105,7 @@
                     "key": "k",
                     "action": "gk",
                     "options": {
-                        "desc": "Open a new vertical split"
+                        "desc": "Makes it so that moving up and down works normally for soft wraps"
                     }
                 },
                 {
@@ -113,7 +113,7 @@
                     "key": "j",
                     "action": "gj",
                     "options": {
-                        "desc": "Open a new vertical split"
+                        "desc": "Makes it so that moving up and down works normally for soft wraps"
                     }
                 },
                 {
@@ -121,7 +121,15 @@
                     "key": "k",
                     "action": "gk",
                     "options": {
-                        "desc": "Open a new vertical split"
+                        "desc": "Makes it so that moving up and down works normally for soft wraps"
+                    }
+                },
+                {
+                    "mode": "n",
+                    "key": "<leader>sc",
+                    "action": ":setlocal spell spelllang=en_us<CR>",
+                    "options": {
+                        "desc": "Enable spell check in the buffer. See [the wiki article](https://neovim.io/doc/user/spell.html)"
                     }
                 }
             ]

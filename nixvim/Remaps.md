@@ -37,19 +37,20 @@ keymaps
 |  &lt;Esc&gt;  | Exit terminal mode (goes to normal mode in the buffer) | t |  &lt;C-\&gt;&lt;C-n&gt;  |
 
 
-## Line Nav
+## Prose Editing
 
-Allows normal movement keys to navigate soft wrapped lines
+Keymaps for making nvim better at editing prose
 
 Config module: 
 keymaps
 
 | Keys | Description | Mode | Action |
 | --- | --- | --- | --- |
-|  j  | Open a new vertical split | n |  gj  |
-|  k  | Open a new vertical split | n |  gk  |
-|  j  | Open a new vertical split | v |  gj  |
-|  k  | Open a new vertical split | v |  gk  |
+|  j  | Makes it so that moving up and down works normally for soft wraps | n |  gj  |
+|  k  | Makes it so that moving up and down works normally for soft wraps | n |  gk  |
+|  j  | Makes it so that moving up and down works normally for soft wraps | v |  gj  |
+|  k  | Makes it so that moving up and down works normally for soft wraps | v |  gk  |
+|  &lt;leader&gt;sc  | Enable spell check in the buffer. See [the wiki article](https://neovim.io/doc/user/spell.html) | n |  :setlocal spell spelllang=en_us&lt;CR&gt;  |
 
 
 ## Splits

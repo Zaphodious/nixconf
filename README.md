@@ -1,6 +1,6 @@
 # Zaph's Nix Configs
 
-Zaph's personal nix configs for 
+Zaph's personal nix config for 
 
 - [NixOS](./nixos/)
 - [Home Manager](./home-manager/)
@@ -18,7 +18,7 @@ run `nix run ./nixvim/`)
 A new NixOS machine can be configured by running (setup_host.sh)[./setup_host.sh) 
 (If no hostname is passed into the script, it will prompt for one). 
 
-For convienence, the following can also be run from the admin user's 
+For convenience, the following can also be run from the admin user's 
 home directory, which will clone the repo and run the above script 
 automatically:
 
@@ -37,9 +37,10 @@ If the hardware on a given system changes, running
 host's hardware-configuration.nix file.
 
 To update dependencies, either specifically or system-wide, please see 
-the documentation for how to update depencies using nix flakes.
+the documentation for how to update dependencies using nix flakes.
 
 ## OneDrive
 
 For logging into OneDrive on a new system, please refer to [this wiki article]
 (https://nixos.wiki/wiki/OneDrive).
+
