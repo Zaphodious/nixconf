@@ -37,6 +37,21 @@ keymaps
 |  &lt;Esc&gt;  | Exit terminal mode (goes to normal mode in the buffer) | t |  &lt;C-\&gt;&lt;C-n&gt;  |
 
 
+## Line Nav
+
+Allows normal movement keys to navigate soft wrapped lines
+
+Config module: 
+keymaps
+
+| Keys | Description | Mode | Action |
+| --- | --- | --- | --- |
+|  j  | Open a new vertical split | n |  gj  |
+|  k  | Open a new vertical split | n |  gk  |
+|  j  | Open a new vertical split | v |  gj  |
+|  k  | Open a new vertical split | v |  gk  |
+
+
 ## Splits
 
 Movement relating to vim window splits

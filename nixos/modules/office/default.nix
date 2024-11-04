@@ -23,7 +23,7 @@
 
     environment.systemPackages = with pkgs; [
       # ... other packages
-      libreoffice
+      onlyoffice-desktopeditors
       onedrive
 
     ];

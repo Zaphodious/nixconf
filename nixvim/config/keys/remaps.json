@@ -85,6 +85,48 @@
             ]
         },
         {
+            "category": "Line Nav",
+            "desc": "Allows normal movement keys to navigate soft wrapped lines",
+            "attrPath": [
+                "keymaps"
+            ],
+            "transformer": "none",
+            "mappings": [
+                {
+                    "mode": "n",
+                    "key": "j",
+                    "action": "gj",
+                    "options": {
+                        "desc": "Open a new vertical split"
+                    }
+                },
+                {
+                    "mode": "n",
+                    "key": "k",
+                    "action": "gk",
+                    "options": {
+                        "desc": "Open a new vertical split"
+                    }
+                },
+                {
+                    "mode": "v",
+                    "key": "j",
+                    "action": "gj",
+                    "options": {
+                        "desc": "Open a new vertical split"
+                    }
+                },
+                {
+                    "mode": "v",
+                    "key": "k",
+                    "action": "gk",
+                    "options": {
+                        "desc": "Open a new vertical split"
+                    }
+                }
+            ]
+        },
+        {
             "category": "Splits",
             "desc": "Movement relating to vim window splits",
             "attrPath": [
