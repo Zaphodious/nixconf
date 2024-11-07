@@ -155,7 +155,7 @@ keymaps
 
 | Keys | Description | Mode | Action |
 | --- | --- | --- | --- |
-|  &lt;leader&gt;rn  | Rename-refactors symbol in project (make sure to :wa afterword) | n |  &lt;cmd&gt;lua vim.lsp.buf.rename()&lt;CR&gt;  |
+|  &lt;leader&gt;godot  | Starts listening for open-file messages from a properly configured Godot | n |  :echo serverstart(&#x27;/tmp/godot.pipe&#x27;)  |
 |  &lt;leader&gt;rt  | Replace text matches under cursor | n |  [[:%s/\&lt;&lt;C-r&gt;&lt;C-w&gt;\&gt;/&lt;C-r&gt;&lt;C-w&gt;/gI&lt;Left&gt;&lt;Left&gt;&lt;Left&gt;]]  |
 
 
@@ -168,6 +168,7 @@ plugins.lsp.keymaps.extra
 
 | Keys | Description | Mode | Action |
 | --- | --- | --- | --- |
+|  &lt;leader&gt;rn  | Rename-refactors symbol in project (make sure to :wa afterword) | n |  :lua vim.lsp.buf.rename()&lt;CR&gt;  |
 |  gd  | Jump to definition | n |  :lua vim.lsp.buf.definition()&lt;cr&gt;  |
 |  gh  | Displays hover info about the symbol under cursor | n |  :lua vim.lsp.buf.hover()&lt;cr&gt;  |
 |  &lt;leader&gt;vws  | Lists all symbols in the current workspace in the quickfix window | n |  :lua vim.lsp.buf.workspace_symbol()&lt;cr&gt;  |
@@ -176,7 +177,6 @@ plugins.lsp.keymaps.extra
 |  ]d  | Go to the previous instance of this symbol | n |  :lua vim.lsp.buf.goto_prev()&lt;cr&gt;  |
 |  &lt;leader&gt;vca  | Selects a code action available at the current cursor position | n |  :lua vim.lsp.buf.code_action()&lt;cr&gt;  |
 |  &lt;leader&gt;vrr  | Lists all the references to the symbol under the cursor in the quickfix window | n |  :lua vim.lsp.buf.references()&lt;cr&gt;  |
-|  &lt;leader&gt;vrn  | Rename the symbol in the project. | n |  :lua vim.lsp.buf.rename()&lt;cr&gt;  |
 |  &lt;C-h&gt;  | Displays signature information about the symbol under the cursor in a floating window | n |  :lua vim.lsp.buf.signature_help()&lt;cr&gt;  |
 |  &lt;leader&gt;f  | Formats a buffer using the attached (and optionally filtered) language server clients. | n |  :lua vim.lsp.buf.format()&lt;cr&gt;  |
 

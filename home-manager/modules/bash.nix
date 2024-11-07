@@ -56,7 +56,7 @@
         fi
 
         function proomptme {
-            PS1="$(proompt -i $EUID -c '🮲🮳' f09432\
+            PS1="$(proompt -i $EUID -c '🮲🮳' 907412\
                 -g "$(git status --porcelain=v2 --branch 2>&1)"\
                 -t trains 640635\
                 -s fbd439 4b3409 "''${THETIME@P}"\

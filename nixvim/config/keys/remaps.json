@@ -428,10 +428,10 @@
             "mappings": [
                 {
                     "mode": "n",
-                    "key": "<leader>rn",
-                    "action": "<cmd>lua vim.lsp.buf.rename()<CR>",
+                    "key": "<leader>godot",
+                    "action": ":echo serverstart('/tmp/godot.pipe')",
                     "options": {
-                        "desc": "Rename-refactors symbol in project (make sure to :wa afterword)"
+                        "desc": "Starts listening for open-file messages from a properly configured Godot"
                     }
                 },
                 {
@@ -455,6 +455,14 @@
             ],
             "transformer": "none",
             "mappings": [
+                {
+                    "mode": "n",
+                    "key": "<leader>rn",
+                    "action": ":lua vim.lsp.buf.rename()<CR>",
+                    "options": {
+                        "desc": "Rename-refactors symbol in project (make sure to :wa afterword)"
+                    }
+                },
                 {
                     "mode": "n",
                     "key": "gd",
@@ -517,14 +525,6 @@
                     "action": ":lua vim.lsp.buf.references()<cr>",
                     "options": {
                         "desc": "Lists all the references to the symbol under the cursor in the quickfix window"
-                    }
-                },
-                {
-                    "mode": "n",
-                    "key": "<leader>vrn",
-                    "action": ":lua vim.lsp.buf.rename()<cr>",
-                    "options": {
-                        "desc": "Rename the symbol in the project."
                     }
                 },
                 {

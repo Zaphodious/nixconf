@@ -1,10 +1,4 @@
-[gd_resource type="EditorSettings" load_steps=2 format=3]
-
-[sub_resource type="InputEventKey" id="InputEventKey_0q212"]
-command_or_control_autoremap = true
-alt_pressed = true
-keycode = 75
-unicode = 75
+[gd_resource type="EditorSettings" format=3]
 
 [resource]
 interface/theme/base_color = Color(0.21, 0.24, 0.29, 1)
@@ -78,7 +72,7 @@ editors/3d/navigation/show_viewport_navigation_gizmo = false
 text_editor/behavior/files/auto_reload_and_parse_scripts_on_save = true
 text_editor/behavior/files/open_dominant_script_on_scene_change = false
 text_editor/external/use_external_editor = true
-text_editor/external/exec_path = "vim"
+text_editor/external/exec_path = "vi"
 text_editor/script_list/script_temperature_enabled = true
 text_editor/script_list/script_temperature_history_size = 15
 text_editor/script_list/group_help_pages = true
@@ -148,10 +142,6 @@ dotnet/build/no_console_logging = false
 dotnet/build/create_binary_log = false
 dotnet/build/problems_layout = 1
 text_editor/help/sort_functions_alphabetically = true
-shortcuts = [{
-"name": "editor/clear_output",
-"shortcuts": [SubResource("InputEventKey_0q212")]
-}]
 metadata/export_template_download_directory = "/home/zaph/.cache/godot"
 metadata/script_setup_templates_dictionary = {
 "Node2D": "0NodeDefault",

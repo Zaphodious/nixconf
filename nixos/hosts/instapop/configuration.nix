@@ -49,6 +49,8 @@
       dissent
       vscode-fhs
       stacer
+      inkscape
+      libwacom-surface
       # godot_4
     ] ++ [inputs.handlebars.packages."x86_64-linux".default];
 

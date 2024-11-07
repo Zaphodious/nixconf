@@ -2,11 +2,16 @@
 opacity=0.85
 blur=true
 
+[window.dimensions]
+columns = 90
+lines = 30
+
+
 [font]
 size = 13.0
 
 [font.normal]
-family = "RobotoMono Nerd Font"
+family = "ComicShannsMono Nerd Font"
 
 
 
