@@ -6,6 +6,13 @@
             "hostname": "instapop",
             "system": "x86_64-linux",
             "homefile": "zaph-laptop.nix"
+        },
+        {
+            "username": "zaphodious",
+            "homedir": "/home/zaphodious",
+            "hostname": "pylon",
+            "system": "x86_64-linux",
+            "homefile": "zaph-wsl.nix"
         }
     ]
 }
