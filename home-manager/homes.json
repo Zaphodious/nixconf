@@ -5,14 +5,16 @@
             "homedir": "/home/zaph",
             "hostname": "instapop",
             "system": "x86_64-linux",
-            "homefile": "zaph-laptop.nix"
+            "homefile": "zaph-laptop.nix",
+	    "single-user": false
         },
         {
             "username": "zaphodious",
             "homedir": "/home/zaphodious",
             "hostname": "pylon",
             "system": "x86_64-linux",
-            "homefile": "zaph-wsl.nix"
+            "homefile": "zaph-wsl.nix",
+	    "single-user": true
         }
     ]
 }

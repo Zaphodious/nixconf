@@ -58,6 +58,7 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+    ".config/nix/nix.conf".text = "extra-experimental-features = flakes nix-command";
   };
 
   # Home Manager can also manage your environment variables through
@@ -79,6 +80,7 @@
   home.sessionVariables = {
     EDITOR = "vi";
     TERMINAL = "alacritty";
+    PATH = "$PATH:$HOME/.nix-profile/etc/profile.d";
   };
   # Manage git
   programs.git = {
@@ -95,4 +97,8 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   home.stateVersion = "24.05"; # Please read the comment before changing.
+  # Make sure that nix is usable
+  programs.bash.bashrcExtra = ''
+    source $HOME/.nix-profile/etc/profile.d/nix.sh
+  '';
 }

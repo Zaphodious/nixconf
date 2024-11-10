@@ -39,9 +39,13 @@
           hostname,
           system,
           homefile,
+	  single-user
         }:
+	let 
+		optname = if single-user then "${username}" else "${username}@${hostname}";
+	in
         {
-          "${username}@${hostname}" = home-manager.lib.homeManagerConfiguration (
+          "${optname}" = home-manager.lib.homeManagerConfiguration (
             nixpkgs.lib.debug.traceVal {
 
               # Specify your home configuration modules here, for example,
