@@ -14,6 +14,20 @@ let
       };
     }
   );
+  user-command-map = (
+    {
+      key,
+      action,
+      options,
+      ...
+    }@mapping:
+    {
+      ${key} = {
+        command = action;
+      } // options;
+
+    }
+  );
   single-simple-action-key-map = (
     { key, action, ... }:
     {
@@ -26,6 +40,7 @@ let
     "key-action-map" = single-key-action-map;
     "key-command-map" = single-key-command-map;
     "simple-action-key-map" = single-simple-action-key-map;
+    "user-command-map" = user-command-map;
   };
   list-transformer-set = {
     "none" = thing: thing;
@@ -33,6 +48,7 @@ let
     "key-action-map" = thing: (lib.attrsets.mergeAttrsList thing);
     "key-command-map" = lib.attrsets.mergeAttrsList;
     "simple-action-key-map" = lib.attrsets.mergeAttrsList;
+    "user-command-map" = lib.attrsets.mergeAttrsList;
   };
   parse-mapping-category =
     {

@@ -144,6 +144,16 @@ dotnet/build/problems_layout = 1
 text_editor/help/sort_functions_alphabetically = true
 metadata/export_template_download_directory = "/home/zaph/.cache/godot"
 metadata/script_setup_templates_dictionary = {
+"Node": "0NodeDefault",
 "Node2D": "0NodeDefault",
-"Node3D": "0NodeDefault"
+"Node3D": "0NodeDefault",
+"R": "0ObjectEmpty",
+"Re": "0ObjectEmpty",
+"Res": "0ObjectEmpty",
+"Reso": "0ObjectEmpty",
+"Resou": "0ObjectEmpty",
+"Resour": "0ObjectEmpty",
+"Resourc": "0ObjectEmpty",
+"Resource": "0ObjectEmpty",
+"Resoure": "0ObjectEmpty"
 }

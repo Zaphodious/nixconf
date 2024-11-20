@@ -692,6 +692,26 @@
                     }
                 }
             ]
+        },
+        {
+            "category": "User Commands",
+            "desc": "Ex commands for entering by the user",
+            "which-key-include": false,
+            "attrPath": [
+                "userCommands"
+            ],
+            "transformer": "user-command-map",
+            "mappings": [
+                {
+                    "mode": "v",
+                    "key": "Table",
+                    "action": ":'<,'> ! tr -s \" \" |column -t -s \"|\" -o \"|\"",
+                    "options": {
+                        "desc": "Opens the Neotree sidebar",
+                        "range": true
+                    }
+                }
+            ]
         }
     ]
 }

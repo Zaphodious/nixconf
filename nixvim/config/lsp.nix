@@ -10,7 +10,7 @@
       csharp_ls.enable = true;
       eslint.enable = true;
       marksman.enable = true;
-      pylyzer.enable = true;
+      pyright.enable = true;
       rust_analyzer = {
         enable = true;
         installCargo = true;

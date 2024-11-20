@@ -229,5 +229,17 @@ plugins.snipe.navigation.keys
 |  q  | Closes the buffer under the cursor |  |  close_buffer  |
 
 
+## User Commands
+
+Ex commands for entering by the user
+
+Config module: 
+userCommands
+
+| Keys | Description | Mode | Action |
+| --- | --- | --- | --- |
+|  Table  | Opens the Neotree sidebar | v |  :&#x27;&lt;,&#x27;&gt; ! tr -s &quot; &quot; |column -t -s &quot;|&quot; -o &quot;|&quot;  |
+
+
 
 

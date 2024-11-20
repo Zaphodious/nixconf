@@ -3,6 +3,7 @@
   lib,
   config,
   system,
+  pkgs,
   ...
 }:
 {
@@ -13,6 +14,7 @@
 
     home.packages = [
       inputs.nixvim-config.packages.${system}.default
+      pkgs.util-linux
     ];
 
 

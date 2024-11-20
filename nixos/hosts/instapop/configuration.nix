@@ -66,6 +66,11 @@
     hardware.graphics.enable = true;
     hardware.graphics.enable32Bit = true;
 
+    services.iptsd.config.Touchscreen = {
+        DisableOnPalm = true;
+        DisableOnStylus = true;
+    };
+
     services.xserver.videoDrivers = [ "amdgpu" ];
 
     boot.initrd.kernelModules = [ "amdgpu" ];
