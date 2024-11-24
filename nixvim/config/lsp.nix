@@ -7,7 +7,8 @@
       nixd.enable = true;
       html.enable = true;
       clojure_lsp.enable = true;
-      csharp_ls.enable = true;
+      #csharp_ls.enable = true;
+      omnisharp.enable = true;
       eslint.enable = true;
       marksman.enable = true;
       pyright.enable = true;
