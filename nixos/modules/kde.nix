@@ -19,6 +19,18 @@
   };
   config = lib.mkIf config.modules.kde.enabled {
 
+    environment.systemPackages =
+      (with pkgs; [
+      kdePackages.kdecoration
+      kdePackages.applet-window-buttons6
+      sweet
+      sweet-nova
+      sweet-folders
+      candy-icons
+      #libsForQt5.qtstyleplugin-kvantum
+      kdePackages.qtstyleplugin-kvantum
+      ]);
+
 	services = {
 		displayManager.sddm = {
 			enable = true;

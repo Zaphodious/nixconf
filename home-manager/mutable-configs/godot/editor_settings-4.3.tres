@@ -37,6 +37,8 @@ text_editor/theme/highlighting/mark_color = Color(1, 0.47, 0.42, 0.3)
 text_editor/theme/highlighting/breakpoint_color = Color(1, 0.47, 0.42, 1)
 text_editor/theme/highlighting/code_folding_color = Color(1, 1, 1, 0.27)
 text_editor/theme/highlighting/search_result_color = Color(1, 1, 1, 0.07)
+text_editor/completion/add_string_name_literals = true
+text_editor/completion/add_node_path_literals = true
 network/connection/network_mode = 1
 asset_library/available_urls = {
 "godotengine.org (Official)": "https://godotengine.org/asset-library/api"
@@ -108,7 +110,7 @@ network/language_server/remote_host = "127.0.0.1"
 network/language_server/remote_port = 6005
 network/language_server/enable_smart_resolve = true
 network/language_server/show_native_symbols_in_editor = true
-network/language_server/use_thread = false
+network/language_server/use_thread = true
 network/language_server/poll_limit_usec = 100000
 text_editor/theme/highlighting/gdscript/function_definition_color = Color(0.4, 0.9, 1, 1)
 text_editor/theme/highlighting/gdscript/global_function_color = Color(0.64, 0.64, 0.96, 1)
@@ -137,7 +139,7 @@ editors/3d_gizmos/gizmo_colors/lightprobe_lines = Color(0.5, 0.6, 1, 1)
 editors/3d_gizmos/gizmo_colors/joint_body_a = Color(0.6, 0.8, 1, 1)
 editors/3d_gizmos/gizmo_colors/joint_body_b = Color(0.6, 0.9, 1, 1)
 editors/3d_gizmos/gizmo_colors/fog_volume = Color(0.5, 0.7, 1, 1)
-dotnet/editor/external_editor = 0
+dotnet/editor/external_editor = 4
 dotnet/editor/custom_exec_path = ""
 dotnet/editor/custom_exec_path_args = "{file}"
 dotnet/build/verbosity_level = 2
@@ -147,6 +149,33 @@ dotnet/build/problems_layout = 1
 text_editor/help/sort_functions_alphabetically = true
 metadata/export_template_download_directory = "/home/zaph/.cache/godot"
 metadata/script_setup_templates_dictionary = {
+"": "0ObjectEmpty",
+"Area2D": "0NodeDefault",
+"B": "0ObjectEmpty",
+"Ba": "0ObjectEmpty",
+"Bas": "0ObjectEmpty",
+"Base": "0ObjectEmpty",
+"BaseB": "0ObjectEmpty",
+"BaseBu": "0ObjectEmpty",
+"BaseBui": "0ObjectEmpty",
+"BaseBuil": "0ObjectEmpty",
+"BaseBuild": "0ObjectEmpty",
+"BaseBuildi": "0ObjectEmpty",
+"BaseBuildin": "0ObjectEmpty",
+"BaseBuilding": "0ObjectEmpty",
+"Bu": "0ObjectEmpty",
+"Bui": "0ObjectEmpty",
+"Buil": "0ObjectEmpty",
+"Build": "0ObjectEmpty",
+"Buildi": "0ObjectEmpty",
+"Buildin": "0ObjectEmpty",
+"Building": "0ObjectEmpty",
+"BuildingB": "0ObjectEmpty",
+"BuildingBa": "0ObjectEmpty",
+"BuildingBas": "0ObjectEmpty",
+"BuildingBase": "0ObjectEmpty",
+"CharacterBody2D": "0CharacterBody2DBasic Movement",
+"Label": "0NodeDefault",
 "Node": "0NodeDefault",
 "Node2D": "0NodeDefault",
 "Node3D": "0NodeDefault",
@@ -159,5 +188,6 @@ metadata/script_setup_templates_dictionary = {
 "Resourc": "0ObjectEmpty",
 "Resource": "0ObjectEmpty",
 "Resoure": "0ObjectEmpty",
+"RigidBody2D": "0NodeDefault",
 "Sprite2D": "0NodeDefault"
 }

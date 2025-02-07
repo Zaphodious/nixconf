@@ -51,6 +51,7 @@ keymaps
 |  j  | Makes it so that moving up and down works normally for soft wraps | v |  gj  |
 |  k  | Makes it so that moving up and down works normally for soft wraps | v |  gk  |
 |  &lt;leader&gt;sc  | Enable spell check in the buffer. See [the wiki article](https://neovim.io/doc/user/spell.html) | n |  :setlocal spell spelllang=en_us&lt;CR&gt;  |
+|  &lt;leader&gt;rm  | Enable spell check in the buffer. See [the wiki article](https://neovim.io/doc/user/spell.html) | n |  :RenderMarkdown toggle&lt;CR&gt;  |
 
 
 ## Splits

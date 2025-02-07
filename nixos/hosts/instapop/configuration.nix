@@ -27,7 +27,7 @@
     # Toggle modules from local modules module
     modules.common.enabled = true;
     modules.fingerprint.enabled = true;
-    modules.gnome.enabled = true;
+    modules.kde.enabled = true;
     modules.blender.enabled = true;
     modules.office.enabled = true;
 
@@ -51,6 +51,7 @@
       stacer
       inkscape
       libwacom-surface
+      vlc
       # godot_4
     ] ++ [inputs.handlebars.packages."x86_64-linux".default];
 
@@ -113,7 +114,7 @@
     services.printing.enable = true;
 
     # Enable sound with pipewire.
-    hardware.pulseaudio.enable = false;
+    services.pulseaudio.enable = false;
     security.rtkit.enable = true;
     services.pipewire = {
       enable = true;

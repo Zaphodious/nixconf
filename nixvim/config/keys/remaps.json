@@ -131,6 +131,14 @@
                     "options": {
                         "desc": "Enable spell check in the buffer. See [the wiki article](https://neovim.io/doc/user/spell.html)"
                     }
+                },
+                {
+                    "mode": "n",
+                    "key": "<leader>rm",
+                    "action": ":RenderMarkdown toggle<CR>",
+                    "options": {
+                        "desc": "Enable spell check in the buffer. See [the wiki article](https://neovim.io/doc/user/spell.html)"
+                    }
                 }
             ]
         },

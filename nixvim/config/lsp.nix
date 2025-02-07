@@ -21,6 +21,8 @@
       svelte.enable = true;
       zls.enable = true;
       jsonls.enable = true;
+      gopls.enable = true;
+      lua_ls.enable = true;
 
     };
 

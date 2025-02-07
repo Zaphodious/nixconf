@@ -16,6 +16,8 @@
   modules.dev.enable = true;
   modules.dev.clojure.enable = true;
   modules.dev.rust.enable = true;
+  modules.dev.go.enable = true;
+  modules.dev.lua.enable = true;
   modules.dev.godot.enable = true;
   modules.dev.dotnet.enable = true;
   modules.custom-nixvim.enable = true;

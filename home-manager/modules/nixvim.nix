@@ -15,6 +15,7 @@
     home.packages = [
       inputs.nixvim-config.packages.${system}.default
       pkgs.util-linux
+      pkgs.marksman
     ];
 
 

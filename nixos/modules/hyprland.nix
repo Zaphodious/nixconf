@@ -35,6 +35,8 @@
       # ... other packages
       kitty
       where-is-my-sddm-theme
+      libinput
+      libinput-gestures
     ];
 
 

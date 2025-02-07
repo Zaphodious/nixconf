@@ -7,27 +7,17 @@
 }:
 
 {
-  imports = [
-    ./clojure.nix
-    ./rust.nix
-    ./godot.nix
-    ./dotnet.nix
-    ./go.nix
-    ./lua.nix
-  ];
-
   options = {
-    modules.dev.enable = lib.mkEnableOption "enables dev profile";
+    modules.dev.lua.enable = lib.mkEnableOption "enables Lua in dev profile";
   };
 
-  config = lib.mkIf config.modules.dev.enable {
+  config = lib.mkIf config.modules.dev.lua.enable {
     # The home.packages option allows you to install Nix packages into your
     # environment.
     home.packages = with pkgs; [
       # # Adds the 'hello' command to your environment. It prints a friendly
       # # "Hello, world!" when run.
-      hello
-      cowsay
+      lua-language-server
 
       # # It is sometimes useful to fine-tune packages, for example, by applying
       # # overrides. You can do that directly here, just don't forget the
