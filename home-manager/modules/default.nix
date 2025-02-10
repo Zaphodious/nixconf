@@ -21,6 +21,7 @@ in
     ./alien.nix
     ./bash.nix
     ./alacritty
+    ./kde.nix
   ];
 
 

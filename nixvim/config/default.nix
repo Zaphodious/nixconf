@@ -12,6 +12,7 @@
     ./autocomplete.nix
     ./harpoon.nix
     ./render_markdown.nix
+    ./dap.nix
   ];
 
   globals.mapleader = " ";

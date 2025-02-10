@@ -1,6 +1,80 @@
 {
     "categories": [
         {
+            "category": "Debugging",
+            "desc": "How to control the debugger",
+            "attrPath": [
+                "keymaps"
+            ],
+            "transformer": "none",
+            "mappings": [
+                {
+                    "mode": "n",
+                    "key": "<leader>b",
+                    "action": ":lua require'dap'.toggle_breakpoint() <CR>",
+                    "options": {
+                        "desc": "Sets a breakpoint"
+                    }
+                },
+                {
+                    "mode": "n",
+                    "key": "<F4>",
+                    "action": ":lua require'dap'.continue() <CR>",
+                    "options": {
+                        "desc": "Continues/runs debug session"
+                    }
+                },
+                {
+                    "mode": "n",
+                    "key": "<leader>dd",
+                    "action": ":lua require'dapui'.toggle() <CR>",
+                    "options": {
+                        "desc": "Continues/runs debug session"
+                    }
+                },
+                {
+                    "mode": "n",
+                    "key": "<F10>",
+                    "action": ":lua require'dap'.step_over() <CR>",
+                    "options": {
+                        "desc": "Steps over the current debug line"
+                    }
+                },
+                {
+                    "mode": "n",
+                    "key": "<F11>",
+                    "action": ":lua require'dap'.step_into() <CR>",
+                    "options": {
+                        "desc": "Steps into the current debug line"
+                    }
+                },
+                {
+                    "mode": "n",
+                    "key": "<F12>",
+                    "action": ":lua require'dap'.step_out() <CR>",
+                    "options": {
+                        "desc": "Steps out of the current debug line"
+                    }
+                },
+                {
+                    "mode": "n",
+                    "key": "<leader>dg",
+                    "action": ":lua require('dap-go').debug_test() <CR>",
+                    "options": {
+                        "desc": "Starts the debugger on the nearest Golang test"
+                    }
+                },
+                {
+                    "mode": "n",
+                    "key": "<leader>dlg",
+                    "action": ":lua require('dap-go').debug_last_test() <CR>",
+                    "options": {
+                        "desc": "Starts the debugger on the Golang test last debugged"
+                    }
+                }
+            ]
+        },
+        {
             "category": "Modals",
             "desc": "Commands that open windows/views that have their own internal key bindings",
             "attrPath": [

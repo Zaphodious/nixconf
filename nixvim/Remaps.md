@@ -7,6 +7,25 @@ Note that the contents of the "action" field are only
 what is passed to the respective nix config module, and 
 are not necessarily what is triggerd within neovim.
 
+## Debugging
+
+How to control the debugger
+
+Config module: 
+keymaps
+
+| Keys | Description | Mode | Action |
+| --- | --- | --- | --- |
+|  &lt;leader&gt;b  | Sets a breakpoint | n |  :lua require&#x27;dap&#x27;.toggle_breakpoint() &lt;CR&gt;  |
+|  &lt;F4&gt;  | Continues/runs debug session | n |  :lua require&#x27;dap&#x27;.continue() &lt;CR&gt;  |
+|  &lt;leader&gt;dd  | Continues/runs debug session | n |  :lua require&#x27;dapui&#x27;.toggle() &lt;CR&gt;  |
+|  &lt;F10&gt;  | Steps over the current debug line | n |  :lua require&#x27;dap&#x27;.step_over() &lt;CR&gt;  |
+|  &lt;F11&gt;  | Steps into the current debug line | n |  :lua require&#x27;dap&#x27;.step_into() &lt;CR&gt;  |
+|  &lt;F12&gt;  | Steps out of the current debug line | n |  :lua require&#x27;dap&#x27;.step_out() &lt;CR&gt;  |
+|  &lt;leader&gt;dg  | Starts the debugger on the nearest Golang test | n |  :lua require(&#x27;dap-go&#x27;).debug_test() &lt;CR&gt;  |
+|  &lt;leader&gt;dlg  | Starts the debugger on the Golang test last debugged | n |  :lua require(&#x27;dap-go&#x27;).debug_last_test() &lt;CR&gt;  |
+
+
 ## Modals
 
 Commands that open windows/views that have their own internal key bindings

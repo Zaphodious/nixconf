@@ -1,13 +1,12 @@
 {pkgs, ...}:
 {
-	/*
-	colorschemes.onedark = {
+	colorschemes.catppuccin = {
 		enable = true;
 		settings = {
-			style = "warmer";
+			flavor = "mocha";
 		};
 	};
-	*/
+	colorscheme = "catppuccin";
 	extraPlugins = [
 		(pkgs.vimUtils.buildVimPlugin {
 			name = "vscode_modern";
@@ -49,6 +48,5 @@
 			'';
 		})
 	];
-	colorscheme = "vscode_modern";
 
 }
