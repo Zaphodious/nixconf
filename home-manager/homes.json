@@ -9,6 +9,14 @@
 	    "single-user": false
         },
         {
+            "username": "zaph",
+            "homedir": "/home/zaph",
+            "hostname": "frameboycolor",
+            "system": "x86_64-linux",
+            "homefile": "zaph-laptop.nix",
+	    "single-user": false
+        },
+        {
             "username": "zaphodious",
             "homedir": "/home/zaphodious",
             "hostname": "pylon",
