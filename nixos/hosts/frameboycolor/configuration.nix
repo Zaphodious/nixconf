@@ -28,9 +28,12 @@
     services.power-profiles-daemon.enable = true;
     services.fwupd.enable = true;
 
+    # Hopefully fix power stuff
+    boot.kernelParams = [ "amd_pstate=guided" ];
+
     # Toggle modules from local modules module
     modules.common.enabled = true;
-    modules.fingerprint.enabled = true;
+    # modules.fingerprint.enabled = true; # hardware profile includes
     modules.kde.enabled = true;
     modules.blender.enabled = true;
     modules.office.enabled = true;

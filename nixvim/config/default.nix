@@ -21,6 +21,7 @@
   viAlias = true;
   vimAlias = true;
 
+
   opts = {
     nu = true;
     relativenumber = true;
@@ -69,6 +70,7 @@
     parinfer-rust.enable = true; # Parinfer for lisps
     nvim-surround.enable = true; # Lets you easily surround things
     wrapping.enable = true;
+    #rustaceanvim.enable = true;
 
   };
 }

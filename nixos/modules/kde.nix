@@ -23,6 +23,7 @@
       (with pkgs; [
       kdePackages.kdecoration
       kdePackages.applet-window-buttons6
+      kdePackages.partitionmanager
       sweet
       sweet-nova
       sweet-folders

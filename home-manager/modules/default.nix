@@ -22,6 +22,7 @@ in
     ./bash.nix
     ./alacritty
     ./kde.nix
+    ./wine.nix
   ];
 
 
