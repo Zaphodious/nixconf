@@ -302,16 +302,14 @@
             "category": "Harpoon",
             "desc": "Keymaps for Harpooning around nVim",
             "attrPath": [
-                "plugins",
-                "harpoon",
                 "keymaps"
             ],
-            "transformer": "simple-action-key-map",
+            "transformer": "none",
             "mappings": [
                 {
                     "mode": "n",
                     "key": "<leader>a",
-                    "action": "addFile",
+                    "action": ":lua require'harpoon':list():add() <cr>",
                     "options": {
                         "desc": "Adds a file to harpoon"
                     }
@@ -319,7 +317,7 @@
                 {
                     "mode": "n",
                     "key": "<leader>h",
-                    "action": "toggleQuickMenu",
+                    "action": ":lua require'harpoon'.ui:toggle_quick_menu(require'harpoon':list()) <cr>",
                     "options": {
                         "desc": "Go to the Harpoon quick menu"
                     }
@@ -330,17 +328,14 @@
             "category": "Harpoon files",
             "desc": "Keymaps for switching between Harpoon marks",
             "attrPath": [
-                "plugins",
-                "harpoon",
-                "keymaps",
-                "navFile"
+                "keymaps"
             ],
-            "transformer": "simple-action-key-map",
+            "transformer": "none",
             "mappings": [
                 {
                     "mode": "n",
                     "key": "<leader>1",
-                    "action": "1",
+                    "action": ":lua require'harpoon':list():select(1) <cr>",
                     "options": {
                         "desc": "Go to File 1"
                     }
@@ -348,7 +343,7 @@
                 {
                     "mode": "n",
                     "key": "<leader>2",
-                    "action": "2",
+                    "action": ":lua require'harpoon':list():select(2) <cr>",
                     "options": {
                         "desc": "Go to File 2"
                     }
@@ -356,7 +351,7 @@
                 {
                     "mode": "n",
                     "key": "<leader>3",
-                    "action": "3",
+                    "action": ":lua require'harpoon':list():select(5) <cr>",
                     "options": {
                         "desc": "Go to File 3"
                     }
@@ -364,7 +359,7 @@
                 {
                     "mode": "n",
                     "key": "<leader>4",
-                    "action": "4",
+                    "action": ":lua require'harpoon':list():select(4) <cr>",
                     "options": {
                         "desc": "Go to File 4"
                     }
@@ -372,62 +367,9 @@
                 {
                     "mode": "n",
                     "key": "<leader>5",
-                    "action": "5",
+                    "action": ":lua require'harpoon':list():select(5) <cr>",
                     "options": {
                         "desc": "Go to File 5"
-                    }
-                }
-            ]
-        },
-        {
-            "category": "Harpoon Terminals",
-            "desc": "Keymaps for switchin between Harpoon terminals",
-            "attrPath": [
-                "plugins",
-                "harpoon",
-                "keymaps",
-                "gotoTerminal"
-            ],
-            "transformer": "simple-action-key-map",
-            "mappings": [
-                {
-                    "mode": "n",
-                    "key": "<leader>t1",
-                    "action": "1",
-                    "options": {
-                        "desc": "Go to terminal 1"
-                    }
-                },
-                {
-                    "mode": "n",
-                    "key": "<leader>t2",
-                    "action": "2",
-                    "options": {
-                        "desc": "Go to terminal 2"
-                    }
-                },
-                {
-                    "mode": "n",
-                    "key": "<leader>t3",
-                    "action": "3",
-                    "options": {
-                        "desc": "Go to terminal 3"
-                    }
-                },
-                {
-                    "mode": "n",
-                    "key": "<leader>t4",
-                    "action": "4",
-                    "options": {
-                        "desc": "Go to terminal 4"
-                    }
-                },
-                {
-                    "mode": "n",
-                    "key": "<leader>t5",
-                    "action": "5",
-                    "options": {
-                        "desc": "Go to terminal 5"
                     }
                 }
             ]

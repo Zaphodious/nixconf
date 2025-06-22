@@ -98,12 +98,12 @@ keymaps
 Keymaps for Harpooning around nVim
 
 Config module: 
-plugins.harpoon.keymaps
+keymaps
 
 | Keys | Description | Mode | Action |
 | --- | --- | --- | --- |
-|  &lt;leader&gt;a  | Adds a file to harpoon | n |  addFile  |
-|  &lt;leader&gt;h  | Go to the Harpoon quick menu | n |  toggleQuickMenu  |
+|  &lt;leader&gt;a  | Adds a file to harpoon | n |  :lua require&#x27;harpoon&#x27;:list():add() &lt;cr&gt;  |
+|  &lt;leader&gt;h  | Go to the Harpoon quick menu | n |  :lua require&#x27;harpoon&#x27;.ui:toggle_quick_menu(require&#x27;harpoon&#x27;:list()) &lt;cr&gt;  |
 
 
 ## Harpoon files
@@ -111,31 +111,15 @@ plugins.harpoon.keymaps
 Keymaps for switching between Harpoon marks
 
 Config module: 
-plugins.harpoon.keymaps.navFile
+keymaps
 
 | Keys | Description | Mode | Action |
 | --- | --- | --- | --- |
-|  &lt;leader&gt;1  | Go to File 1 | n |  1  |
-|  &lt;leader&gt;2  | Go to File 2 | n |  2  |
-|  &lt;leader&gt;3  | Go to File 3 | n |  3  |
-|  &lt;leader&gt;4  | Go to File 4 | n |  4  |
-|  &lt;leader&gt;5  | Go to File 5 | n |  5  |
-
-
-## Harpoon Terminals
-
-Keymaps for switchin between Harpoon terminals
-
-Config module: 
-plugins.harpoon.keymaps.gotoTerminal
-
-| Keys | Description | Mode | Action |
-| --- | --- | --- | --- |
-|  &lt;leader&gt;t1  | Go to terminal 1 | n |  1  |
-|  &lt;leader&gt;t2  | Go to terminal 2 | n |  2  |
-|  &lt;leader&gt;t3  | Go to terminal 3 | n |  3  |
-|  &lt;leader&gt;t4  | Go to terminal 4 | n |  4  |
-|  &lt;leader&gt;t5  | Go to terminal 5 | n |  5  |
+|  &lt;leader&gt;1  | Go to File 1 | n |  :lua require&#x27;harpoon&#x27;:list():select(1) &lt;cr&gt;  |
+|  &lt;leader&gt;2  | Go to File 2 | n |  :lua require&#x27;harpoon&#x27;:list():select(2) &lt;cr&gt;  |
+|  &lt;leader&gt;3  | Go to File 3 | n |  :lua require&#x27;harpoon&#x27;:list():select(5) &lt;cr&gt;  |
+|  &lt;leader&gt;4  | Go to File 4 | n |  :lua require&#x27;harpoon&#x27;:list():select(4) &lt;cr&gt;  |
+|  &lt;leader&gt;5  | Go to File 5 | n |  :lua require&#x27;harpoon&#x27;:list():select(5) &lt;cr&gt;  |
 
 
 ## Git

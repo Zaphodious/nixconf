@@ -27,9 +27,8 @@
       ...
     }@inputs:
     let
-      custom-homes =
-        {
-        };
+      custom-homes = {
+      };
       standard-homes = (builtins.fromJSON (builtins.readFile ./homes.json)).homes;
 
       make-standard-home =
@@ -39,11 +38,11 @@
           hostname,
           system,
           homefile,
-	  single-user
+          single-user,
         }:
-	let 
-		optname = if single-user then "${username}" else "${username}@${hostname}";
-	in
+        let
+          optname = if single-user then "${username}" else "${username}@${hostname}";
+        in
         {
           "${optname}" = home-manager.lib.homeManagerConfiguration (
             nixpkgs.lib.debug.traceVal {

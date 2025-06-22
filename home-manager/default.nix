@@ -20,6 +20,7 @@ in
     };
   config = {
 
+
     # This value determines the Home Manager release that your configuration is
     # compatible with. This helps avoid breakage when a new Home Manager release
     # introduces backwards incompatible changes.
@@ -47,9 +48,9 @@ in
       # (pkgs.writeShellScriptBin "my-hello" ''
       #   echo "Hello, ${config.home.username}!"
       # '')
-      nerdfonts
     ];
-    fonts.fontconfig.enable = true;
+    #fonts.fontconfig.enable = true;
+    fonts.packages = [];
 
     # Home Manager is pretty good at managing dotfiles. The primary way to manage
     # plain files is through 'home.file'.

@@ -97,6 +97,11 @@
     # Allow unfree packages
     nixpkgs.config.allowUnfree = lib.mkDefault true;
 
+    # Get around weird home manager error
+    nixpkgs.config.permittedInsecurePackages = [
+                "dotnet-sdk-6.0.428"
+              ];
+
     # Make nvim the default editor
     # programs.neovim.enable = true;
     # programs.neovim.defaultEditor = true;
