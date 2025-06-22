@@ -61,11 +61,22 @@
                 }
               ];
               #hmm
-              pkgs = nixpkgs.legacyPackages.${system};
+              pkgs = (
+                import nixpkgs {
+                  inherit system;
+                  config = {
+                    permittedInsecurePackages = [
+                      "dotnet-sdk-6.0.428"
+                    ];
+                  };
+                }
+              );
+
 
               # Optionally use extraSpecialArgs
               # to pass through arguments to home.nix
               extraSpecialArgs = {
+                
                 inherit inputs;
                 inherit system;
               };

@@ -14,7 +14,8 @@
   };
 
   config = lib.mkIf config.modules.dev.godot.enable {
-    modules.dev.dotnet.enable = true;
+    #modules.dev.dotnet.enable = false;
+
 
     #foo = lib.meta.mkGodotMutableSymlink ./godotconfig "${config.my.home}/.config/godot";
 
@@ -23,7 +24,7 @@
     home.packages = [
       # # Adds the 'hello' command to your environment. It prints a friendly
       # # "Hello, world!" when run.
-      inputs.godot-bin.packages.${system}.godot-mono
+      inputs.godot-bin.packages.${system}.godot
 
       # # It is sometimes useful to fine-tune packages, for example, by applying
       # # overrides. You can do that directly here, just don't forget the
